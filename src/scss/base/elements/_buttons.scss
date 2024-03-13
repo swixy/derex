@@ -1,0 +1,11 @@
+button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	font-family: $font__text;
+	padding: 7px 40px;
+	border: none;
+	height: 48px;
+	font-weight: 700;
+}

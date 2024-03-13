@@ -1,0 +1,32 @@
+.header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  &__container{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__logo{
+    width: 142px;
+  }
+  &__navigator{
+    ul{
+      margin: 0;
+      display: flex;
+      list-style: none;
+      gap: 40px;
+      a{
+        color: $black;
+        font-weight: 500;
+      }
+      li{
+        .sub-menu{
+          display: none;
+        }
+      }
+    }
+  }
+  .hamburger-menu{
+    display: none;
+  }
+}

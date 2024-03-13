@@ -1,0 +1,131 @@
+.booking {
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @include respond-from('large') {
+      gap: 25px;
+    }
+    @include respond-from('medium') {
+      gap: 20px;
+    }
+    .card {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2.5rem;
+      @include respond-from('medium') {
+        margin-top: 2rem;
+      }
+
+      &__img {
+        width: 50%;
+        padding: 0;
+        @media (min-width: 320px) and (max-width: 390px) {
+          max-height: 180px;
+        }
+        @include respond-from('large') {
+          width: 50%;
+        }
+        @include respond-from('medium') {
+          width: 100%;
+          padding: 0 2rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        img {
+          width: 100%;
+          @include respond-from('medium') {
+            max-width: 500px;
+          }
+        }
+      }
+
+      &__text {
+        width: 50%;
+        @include respond-from('large') {
+          width: 50%;
+        }
+        @include respond-from('medium') {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      &__title {
+        display: inline-block;
+        margin: 0 0 1.375rem 0;
+        @include respond-from('large') {
+          font-size: 28px;
+        }
+        @include respond-from('medium') {
+          margin: 20px auto 20px;
+        }
+
+        &:after {
+          content: '';
+          display: block;
+          height: 2px;
+          width: 100%;
+          background-color: $red;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+      }
+
+      &__p {
+        color: $black;
+        font-size: 24px;
+        @include respond-from('large') {
+          font-size: 20px;
+        }
+        @include respond-from('medium') {
+          text-align: center;
+        }
+      }
+    }
+
+    .odd {
+      .card {
+        &__text {
+          padding-left: 5rem;
+          @include respond-from('large') {
+            padding-left: 3rem;
+          }
+          @include respond-from('medium') {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+
+    .even {
+      .card {
+        &__img {
+          @include respond-to('medium') {
+            order: 2;
+          }
+        }
+
+        &__text {
+          padding-right: 5rem;
+          @include respond-from('large') {
+            padding-right: 3rem;
+            order: 1;
+          }
+          @include respond-from('medium') {
+            padding-right: 0;
+          }
+
+        }
+      }
+    }
+  }
+}

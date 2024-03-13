@@ -1,0 +1,69 @@
+.holding {
+  padding: 0;
+  position: relative;
+
+  .container {
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__info {
+    width: 60%;
+    padding: 170px 120px 170px 0;
+
+    &__title {
+      font-size: 40px;
+      font-weight: 700;
+      color: $black;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        color: $black;
+        margin-bottom: 8px;
+      }
+    }
+
+    &__link {
+      color: $black;
+      font-size: 20px;
+      line-height: 38px;
+      font-weight: 600;
+      text-decoration: underline;
+      position: relative;
+      display: inline-block;
+      margin-top: 40px;
+      &:hover {
+        &:after {
+          right: -35px;
+        }
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 20px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1 11H13.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M9 5.75L14.25 11L9 16.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
+        background-size: cover;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+
+  &__image {
+    width: 38vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+  }
+}

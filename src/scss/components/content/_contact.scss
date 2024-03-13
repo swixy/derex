@@ -1,0 +1,51 @@
+.contact{
+  background: $light-grey;
+  &__container{
+    display: flex;
+    gap: 40px;
+  }
+  &__info{
+    width: 30%;
+    &__title{
+      color: $black;
+      font-size: 40px;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    &__text{
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 26px;
+      color: $dark-grey;
+    }
+  }
+  &__form{
+    width: 70%;
+    &__wrapper{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    form{
+      width: 100%;
+      input{
+        height: 50px;
+        background: transparent;
+        border: 1px solid $grey;
+      }
+      textarea{
+        background: transparent;
+        border: 1px solid $grey;
+        width: 100%;
+      }
+    }
+    &__button{
+      margin-left: auto;
+      margin-top: 32px;
+      background: $orange;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+a {
+	text-decoration: none;
+	&:visited {
+	}
+	&:hover,
+	&:focus,
+	&:active {
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+

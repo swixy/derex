@@ -1,0 +1,90 @@
+.services {
+  background: $light-grey;
+  &__title {
+    color: $black;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    color: $black;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 400;
+    margin-bottom: 56px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  &__item {
+    display: flex;
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+    &:nth-child(even){
+      flex-direction: row-reverse;
+    }
+    &__image {
+      width: 50%;
+    }
+
+    &__info {
+      width: 50%;
+      padding: 62px;
+    }
+
+    &__number {
+      color: $black;
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    &__title {
+      color: $black;
+      font-size: 28px;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      color: $black;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 400;
+      margin-bottom: 32px;
+    }
+
+    &__link {
+      color: $black;
+      font-size: 20px;
+      line-height: 38px;
+      font-weight: 600;
+      text-decoration: underline;
+      position: relative;
+      &:hover{
+        &:after{
+          right: -35px;
+        }
+      }
+      &:after{
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 20px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1 11H13.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M9 5.75L14.25 11L9 16.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
+        background-size: cover;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.container{
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 150px;
+}
+section{
+  padding: 120px 0;
+  @include respond-from('medium') {
+    padding: 70px 0;
+  }
+}
