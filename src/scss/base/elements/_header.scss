@@ -2,12 +2,30 @@
   height: 64px;
   display: flex;
   align-items: center;
+  @include respond-from('large') {
+    height: vw-large(64px);
+  }
+  @include respond-from('medium') {
+    height: vw-medium(56px);
+  }
+  @include respond-from('small') {
+    height: vw-small(56px);
+  }
   &__container{
     display: flex;
     justify-content: space-between;
   }
   &__logo{
     width: 142px;
+    @include respond-from('large') {
+      width: vw-large(142px);
+    }
+    @include respond-from('medium') {
+      width: vw-medium(120px);
+    }
+    @include respond-from('small') {
+      width: vw-small(120px);
+    }
   }
   &__navigator{
     ul{
@@ -15,6 +33,12 @@
       display: flex;
       list-style: none;
       gap: 40px;
+      @include respond-from('large') {
+        gap: vw-large(40px);
+      }
+      @include respond-from('medium') {
+        display: none;
+      }
       a{
         color: $black;
         font-weight: 500;

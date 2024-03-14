@@ -18,23 +18,44 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
     });
-    const projectsSwiper = new Swiper('.projects__items', {
-        slidesPerView: "auto",
-        spaceBetween: 30,
-        createElements: true,
-        mousewheel: {
-            enabled: true, // Disable mouse wheel scrolling
-        },
 
+    function checkAndDisableSwiper() {
+        let pageWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        if (pageWidth > 640) {
+            const projectsSwiper = new Swiper('.projects__items', {
+                slidesPerView: "auto",
+                spaceBetween: 30,
+                createElements: true,
+                mousewheel: {
+                    enabled: true, // Disable mouse wheel scrolling
+                },
+
+            });
+        }
+    }
+
+    checkAndDisableSwiper();
+    window.addEventListener('resize', function () {
+        checkAndDisableSwiper();
     });
     const partnersSwiper = new Swiper('.partners__items', {
-        slidesPerView: 4,
+        slidesPerView: "auto",
         createElements: true,
-        spaceBetween: 100,
+        // spaceBetween: 100,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        // breakpoints: {
+        //     320: {
+        //         slidesPerView: 3,
+        //         spaceBetween: 0,
+        //     },
+        //     1024: {
+        //         slidesPerView: 3,
+        //         spaceBetween: 0,
+        //     }
+        // }
     });
     const certificatesSwiper = new Swiper('.certificates__items', {
         slidesPerView: 4,

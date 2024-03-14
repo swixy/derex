@@ -1,36 +1,106 @@
 .footer {
   background: $black;
   padding: 56px 0 16px;
-
+  @include respond-from('large') {
+    padding: vw-large(56px) 0 vw-large(16px);
+  }
+  @include respond-from('medium') {
+    padding: vw-medium(56px) 0 vw-medium(30px);
+  }
+  @include respond-from('small') {
+    padding: vw-small(56px) 0 vw-small(30px);
+  }
   &__container {
     display: grid;
     grid-template-columns: 2fr repeat(2, 1fr);
     grid-template-rows: 1fr;
+    @include respond-from('small') {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__info {
     margin-bottom: 64px;
+    @include respond-from('large') {
+      margin-bottom: vw-large(64px);
+    }
+    @include respond-from('medium') {
+      margin-bottom: vw-medium(64px);
+    }
+    @include respond-from('small') {
+      margin-bottom: vw-small(40px);
+      width: 100%;
+    }
     &__logo {
       width: 200px;
       margin-bottom: 8px;
+      @include respond-from('large') {
+        width: vw-large(200px);
+        margin-bottom: vw-large(8px);
+      }
+      @include respond-from('medium') {
+        width: vw-medium(200px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        width: vw-small(200px);
+        margin-bottom: vw-small(8px);
+      }
     }
 
     &__text {
       color: $grey;
       max-width: 364px;
       margin-bottom: 40px;
+      font-size: 16px;
+      @include respond-from('large') {
+        max-width: vw-large(364px);
+        margin-bottom: vw-large(40px);
+        font-size: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        max-width: vw-medium(262px);
+        margin-bottom: vw-medium(40px);
+        font-size: vw-medium(14px);
+      }
+      @include respond-from('small') {
+        max-width: none;
+        margin-bottom: vw-small(40px);
+        font-size: vw-small(14px);
+        line-height: vw-small(20px);
+      }
     }
 
     &__social {
       display: flex;
       gap: 26px;
-
+      @include respond-from('large') {
+        gap: vw-large(26px);
+      }
+      @include respond-from('medium') {
+        gap: vw-medium(26px);
+      }
+      @include respond-from('small') {
+        gap: vw-small(26px);
+      }
       a {
         height: 28px;
         width: 28px;
-        background-size: cover;
+        background-size: cover !important;
         transition: all .2s ease-in-out;
-
+        @include respond-from('large') {
+          height: vw-large(28px);
+          width: vw-large(28px);
+        }
+        @include respond-from('medium') {
+          height: vw-medium(28px);
+          width: vw-medium(28px);
+        }
+        @include respond-from('small') {
+          height: vw-small(28px);
+          width: vw-small(28px);
+        }
         &.social__mail {
           background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4.66732 4.66602H23.334C24.6173 4.66602 25.6673 5.71602 25.6673 6.99935V20.9994C25.6673 22.2827 24.6173 23.3327 23.334 23.3327H4.66732C3.38398 23.3327 2.33398 22.2827 2.33398 20.9994V6.99935C2.33398 5.71602 3.38398 4.66602 4.66732 4.66602Z" stroke="%23A8A8A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M25.6673 7L14.0007 15.1667L2.33398 7" stroke="%23A8A8A8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 
@@ -59,24 +129,61 @@
   }
 
   &__navigator {
+    @include respond-from('small') {
+      margin-bottom: vw-small(40px);
+    }
     &__title {
       color: $white;
       font-size: 22px;
       line-height: 24px;
       font-weight: 400;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(22px);
+        line-height: vw-large(24px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+        line-height: vw-medium(24px);
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(20px);
+        line-height: vw-medium(24px);
+        margin-bottom: vw-small(16px);
+      }
     }
 
     &__menu {
-      ul{
+      ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
-        li{
+
+        li {
           margin-bottom: 6px;
-          a{
+          @include respond-from('large') {
+            margin-bottom: vw-large(6px);
+          }
+          @include respond-from('medium') {
+            margin-bottom: vw-medium(6px);
+          }
+          @include respond-from('small') {
+            margin-bottom: vw-small(6px);
+          }
+          a {
             color: $grey;
-            &:hover{
+            @include respond-from('large') {
+              font-size: vw-large(16px);
+            }
+            @include respond-from('medium') {
+              font-size: vw-medium(14px);
+            }
+            @include respond-from('small') {
+              font-size: vw-small(14px);
+            }
+            &:hover {
               color: $orange;
             }
 
@@ -87,41 +194,126 @@
   }
 
   &__location {
+    &>div{
+      @include respond-from('small') {
+        display: flex;
+        justify-content: space-between;
+        gap: vw-small(20px);
+      }
+    }
     &__title {
       color: $white;
       font-size: 22px;
       line-height: 24px;
       font-weight: 400;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(22px);
+        line-height: vw-large(24px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+        line-height: vw-medium(24px);
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(20px);
+        line-height: vw-small(24px);
+        margin-bottom: vw-small(16px);
+      }
     }
 
     &__text {
       color: $grey;
-      a{
+      @include respond-from('large') {
+        font-size: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(14px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(14px);
+      }
+      a {
         color: $grey;
         display: inline-block;
         margin: 4px 0;
         text-decoration: underline;
+        @include respond-from('large') {
+          margin: vw-large(4px) 0;
+        }
+        @include respond-from('medium') {
+          margin: vw-medium(4px) 0;
+          font-size: vw-medium(14px);
+        }
+        @include respond-from('small') {
+          margin: vw-small(4px) 0;
+          font-size: vw-small(14px);
+        }
       }
     }
   }
-  hr{
+
+  hr {
     color: $grey;
   }
-  &__bottom{
+
+  &__bottom {
     display: grid;
     grid-template-columns: 2fr repeat(2, 1fr);
     grid-template-rows: 1fr;
     margin-top: 8px;
-    &__copyright{
-      color: $grey;
+    @include respond-from('large') {
+      margin-top: vw-large(8px);
     }
-    &__reserved{
-      color: $grey;
+    @include respond-from('medium') {
+      margin-top: vw-medium(8px);
     }
-    &__policy{
+    @include respond-from('small') {
+      margin-top: vw-small(8px);
+      grid-template-columns: 2fr repeat(1, 2fr);
+    }
+    &__copyright {
+      color: $grey;
+      @include respond-from('large') {
+        font-size: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(14px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(14px);
+      }
+    }
+
+    &__reserved {
+      color: $grey;
+      @include respond-from('large') {
+        font-size: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(14px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(14px);
+        order: 1;
+        margin-top: vw-small(8px);
+      }
+    }
+
+    &__policy {
       color: $grey;
       text-decoration: underline;
+      @include respond-from('large') {
+        font-size: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(14px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(14px);
+      }
     }
   }
 }

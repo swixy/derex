@@ -5,17 +5,41 @@
 	margin-right: auto;
 }
 
+@function vw-large($font){
+	$vw-context: 1440 * 0.01 * 1px;
+	@return $font/$vw-context * 1vw;
+	@return $font;
+}
+@function vw-medium($font){
+	$vw-context: 834 * 0.01 * 1px;
+	@return $font/$vw-context * 1vw;
+	@return $font;
+}
+@function vw-small($font){
+	$vw-context: 390 * 0.01 * 1px;
+	@return $font/$vw-context * 1vw;
+	@return $font;
+}
+//@function vw-large($font) {
+//	$vw-context: 1440 * 0.01; // Calculating 1% of 1440 (viewport width)
+//	@return #{$font / $vw-context}vw; // Returning the font size in viewport width units
+//}
 
-$breakpoints: (
-	'extra-small': (min-width:  480px),
-	'small':  ( min-width:  768px ),
-	'medium': ( min-width:  1024px ),
-	'large':  ( min-width: 1440px )
-) !default;
+
+//@function vw-large($value, $size: 1440) {
+//	@return $value / $size * 100vw;
+//}
+
+//$breakpoints: (
+//	'extra-small': (min-width:  480px),
+//	'small':  ( min-width:  768px ),
+//	'medium': ( min-width:  1024px ),
+//	'large':  ( min-width: 1440px )
+//) !default;
 
 $breakpoints-from: (
-	'extra-small': (max-width:  479px),
-	'small':  ( max-width:  767px ),
+	//'extra-small': (max-width:  479px),
+	'small':  ( max-width:  640px ),
 	'medium': ( max-width:  1023px ),
 	'large':  ( max-width: 1439px )
 ) !default;

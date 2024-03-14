@@ -1,12 +1,30 @@
-.container{
+.container {
   margin: 0 auto;
   max-width: 1440px;
   width: 100%;
   padding: 0 150px;
-}
-section{
-  padding: 120px 0;
+  @include respond-from('large') {
+    max-width: vw-large(1440px);
+    padding: 0 vw-large(150px);
+  }
   @include respond-from('medium') {
-    padding: 70px 0;
+    max-width: none;
+    padding: 0 vw-medium(56px);
+  }
+  @include respond-from('small') {
+    padding: 0 vw-small(16px);
+  }
+}
+
+section {
+  padding: 120px 0;
+  @include respond-from('large') {
+    padding: vw-large(120px) 0;
+  }
+  @include respond-from('medium') {
+    padding: vw-medium(80px) 0;
+  }
+  @include respond-from('small') {
+    padding: vw-small(56px) 0;
   }
 }

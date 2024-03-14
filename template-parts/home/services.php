@@ -19,10 +19,9 @@
                         Fiber-optic network construction
                     </h3>
                     <p class="services__item__text">
-                        We design high-speed and reliable networks that can support a wide range of applications,
-                        from Internet and data transmission to voice and video communication. Our team determines
-                        locations, design fiber-optic cable routes, install equipment, test the network for speed
-                        and reliability, and make necessary adjustments for optimal performance.
+                        Our team determines locations, design fiber-optic cable routes, install equipment, test the
+                        network for speed and reliability, and make necessary adjustments for optimal performance — you
+                        access all services from one source.
                     </p>
                     <a href="" class="services__item__link">
                         View Service

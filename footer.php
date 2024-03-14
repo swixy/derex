@@ -32,14 +32,18 @@
                 <h4 class="footer__location__title">
                     Offices
                 </h4>
-                <div class="footer__location__text">
-                    st. 21F Vishku St., Daugavpils, Latvia LV-5410<br>
-                    <a href="">+371 220 70690 </a><br>
-                    <a href="">derex@derex.lv</a>
-                    <br><br>
-                    Justus-Liebig-Straße 5, 36100 Petersberg, Germany<br>
-                    <a href="">+4932212243888</a><br>
-                    <a href="">derex@derexgmbh.de</a>
+                <div>
+                    <div class="footer__location__text">
+                        st. 21F Vishku St., Daugavpils, Latvia LV-5410<br>
+                        <a href="">+371 220 70690 </a><br>
+                        <a href="">derex@derex.lv</a>
+                        <br>  <br>
+                    </div>
+                    <div class="footer__location__text">
+                        Justus-Liebig-Straße 5, 36100 Petersberg, Germany<br>
+                        <a href="">+4932212243888</a><br>
+                        <a href="">derex@derexgmbh.de</a>
+                    </div>
                 </div>
             </div>
         </div>

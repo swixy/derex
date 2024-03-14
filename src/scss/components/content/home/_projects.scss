@@ -1,5 +1,6 @@
 .projects {
   overflow: hidden;
+
   .container {
 
   }
@@ -13,6 +14,21 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      line-height: vw-large(48px);
+      margin-bottom: vw-large(60px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      line-height: vw-medium(38px);
+      margin-bottom: vw-medium(44px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      line-height: vw-small(38px);
+      margin-bottom: vw-small(40px);
+    }
   }
 
   &__link {
@@ -22,12 +38,35 @@
     font-weight: 600;
     text-decoration: underline;
     position: relative;
-    &:hover{
-      &:after{
+    @include respond-from('large') {
+      font-size: vw-large(20px);
+      line-height: vw-large(38px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(20px);
+      line-height: vw-medium(32px);
+    }
+    @include respond-from('small') {
+      display: none;
+      //font-size: vw-small(20px);
+      //line-height: vw-small(32px);
+    }
+    &:hover {
+      &:after {
         right: -35px;
+        @include respond-from('large') {
+          right: vw-large(-35px);
+        }
+        @include respond-from('medium') {
+          right: vw-medium(-35px);
+        }
+        @include respond-from('small') {
+          right: vw-small(-35px);
+        }
       }
     }
-    &:after{
+
+    &:after {
       position: absolute;
       content: '';
       width: 18px;
@@ -38,6 +77,21 @@
       top: 50%;
       transform: translateY(-50%);
       transition: all .2s ease-in-out;
+      @include respond-from('large') {
+        width: vw-large(18px);
+        height: vw-large(20px);
+        right: vw-large(-25px);
+      }
+      @include respond-from('medium') {
+        width: vw-medium(18px);
+        height: vw-medium(20px);
+        right: vw-medium(-25px);
+      }
+      @include respond-from('small') {
+        width: vw-small(18px);
+        height: vw-small(20px);
+        right: vw-small(-25px);
+      }
     }
   }
 
@@ -46,12 +100,37 @@
   }
 
   &__item {
-    width: 560px!important;
+    width: 560px !important;
+    @include respond-from('large') {
+      width: vw-large(560px) !important;
+    }
+    @include respond-from('medium') {
+      width: vw-medium(350px) !important;
+    }
+    @include respond-from('small') {
+      width: 100% !important;
+      margin-bottom: vw-small(40px);
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
     &__img {
       width: 100%;
-      height: 340px!important;
+      height: 340px !important;
       object-fit: cover;
       margin-bottom: 24px;
+      @include respond-from('large') {
+        height: vw-large(340px) !important;
+        margin-bottom: vw-large(24px);
+      }
+      @include respond-from('medium') {
+        height: vw-medium(216px) !important;
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        height: auto !important;
+        margin-bottom: vw-small(16px);
+      }
     }
 
     &__title {
@@ -60,6 +139,21 @@
       line-height: 32px;
       font-weight: 700;
       margin-bottom: 8px;
+      @include respond-from('large') {
+        font-size: vw-large(28px);
+        line-height: vw-large(32px);
+        margin-bottom: vw-large(8px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(24px);
+        line-height: vw-medium(28px);
+        margin-bottom: vw-medium(4px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(24px);
+        line-height: vw-small(28px);
+        margin-bottom: vw-small(4px);
+      }
 
     }
 
@@ -68,6 +162,20 @@
       font-size: 20px;
       line-height: 26px;
       font-weight: 400;
+      @include respond-from('large') {
+        font-size: vw-large(20px);
+        line-height: vw-large(26px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(16px);
+        line-height: vw-medium(22px);
+        letter-spacing: -0.02em;
+      }
+      @include respond-from('small') {
+        font-size: vw-small(16px);
+        line-height: vw-small(22px);
+        letter-spacing: -0.02em;
+      }
     }
   }
 }

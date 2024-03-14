@@ -6,35 +6,108 @@
     line-height: 46px;
     font-weight: 700;
     margin-bottom: 16px;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      line-height: vw-large(46px);
+      margin-bottom: vw-large(16px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      line-height: vw-medium(38px);
+      margin-bottom: vw-medium(16px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      line-height: vw-small(38px);
+      margin-bottom: vw-small(16px);
+    }
   }
 
   &__text {
     color: $black;
     font-size: 24px;
     line-height: 34px;
-    font-weight: 400;
     margin-bottom: 56px;
+    @include respond-from('large') {
+      font-size: vw-large(24px);
+      line-height: vw-large(34px);
+      margin-bottom: vw-large(56px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(20px);
+      line-height: vw-medium(28px);
+      margin-bottom: vw-medium(48px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(20px);
+      line-height: vw-small(28px);
+      margin-bottom: vw-small(40px);
+    }
   }
 
   &__items {
     display: flex;
     flex-direction: column;
     gap: 80px;
+    @include respond-from('large') {
+      gap: vw-large(80px);
+    }
+    @include respond-from('medium') {
+      gap: vw-medium(40px);
+    }
+    @include respond-from('small') {
+      gap: vw-small(32px);
+    }
   }
 
   &__item {
     display: flex;
     box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.1);
+    @include respond-from('large') {
+      box-shadow: 0 vw-large(4px) vw-large(32px) 0 rgba(0, 0, 0, 0.1);
+    }
+    @include respond-from('medium') {
+      box-shadow: 0 vw-medium(4px) vw-medium(32px) 0 rgba(0, 0, 0, 0.1);
+      min-height: vw-medium(380px);
+    }
+    @include respond-from('small') {
+      flex-direction: column;
+      box-shadow: 0 vw-small(4px) vw-small(32px) 0 rgba(0, 0, 0, 0.1);
+      min-height: vw-small(380px);
+    }
     &:nth-child(even){
       flex-direction: row-reverse;
+      @include respond-from('small') {
+        flex-direction: column;
+      }
     }
     &__image {
       width: 50%;
+      object-fit: cover;
+      @include respond-from('medium') {
+        width: 48%;
+      }
+      @include respond-from('small') {
+        width: 100%;
+      }
     }
 
     &__info {
       width: 50%;
       padding: 62px;
+      @include respond-from('large') {
+        padding: vw-large(62px);
+      }
+      @include respond-from('medium') {
+        padding: vw-medium(24px);
+        width: 52%;
+        display: flex;
+        flex-direction: column;
+      }
+      @include respond-from('small') {
+        padding: vw-small(16px) vw-small(24px);
+        width: 100%;
+      }
     }
 
     &__number {
@@ -43,6 +116,21 @@
       line-height: 28px;
       font-weight: 400;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(24px);
+        line-height: vw-large(28px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+        line-height: vw-medium(24px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(20px);
+        line-height: vw-small(24px);
+        margin-bottom: vw-small(8px);
+      }
     }
 
     &__title {
@@ -51,6 +139,21 @@
       line-height: 32px;
       font-weight: 700;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(28px);
+        line-height: vw-large(32px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(24px);
+        line-height: vw-medium(28px);
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(24px);
+        line-height: vw-small(28px);
+        margin-bottom: vw-small(16px);
+      }
     }
 
     &__text {
@@ -59,6 +162,22 @@
       line-height: 24px;
       font-weight: 400;
       margin-bottom: 32px;
+      @include respond-from('large') {
+        font-size: vw-large(18px);
+        line-height: vw-large(24px);
+        margin-bottom: vw-large(32px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(16px);
+        line-height: vw-medium(22px);
+        margin-bottom: 0;
+        letter-spacing: -0.01em;
+      }
+      @include respond-from('small') {
+        font-size: vw-small(16px);
+        line-height: vw-small(22px);
+        margin-bottom: vw-small(24px);
+      }
     }
 
     &__link {
@@ -68,9 +187,32 @@
       font-weight: 600;
       text-decoration: underline;
       position: relative;
+      @include respond-from('large') {
+        font-size: vw-large(20px);
+        line-height: vw-large(38px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+        line-height: vw-medium(38px);
+        margin-top: auto;
+        width: fit-content;
+      }
+      @include respond-from('small') {
+        font-size: vw-small(20px);
+        line-height: vw-small(38px);
+      }
       &:hover{
         &:after{
           right: -35px;
+          @include respond-from('large') {
+            right: vw-large(-35px);
+          }
+          @include respond-from('medium') {
+            right: vw-medium(-35px);
+          }
+          @include respond-from('small') {
+            right: vw-small(-35px);
+          }
         }
       }
       &:after{
@@ -84,6 +226,21 @@
         top: 50%;
         transform: translateY(-50%);
         transition: all .2s ease-in-out;
+        @include respond-from('large') {
+          width: vw-large(18px);
+          height: vw-large(20px);
+          right: vw-large(-25px);
+        }
+        @include respond-from('medium') {
+          width: vw-medium(18px);
+          height: vw-medium(20px);
+          right: vw-medium(-25px);
+        }
+        @include respond-from('small') {
+          width: vw-small(18px);
+          height: vw-small(20px);
+          right: vw-small(-25px);
+        }
       }
     }
   }
