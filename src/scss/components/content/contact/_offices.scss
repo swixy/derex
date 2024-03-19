@@ -1,0 +1,188 @@
+.offices {
+    &__head {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 16px;
+    }
+    &__text {
+        max-width: 841px;
+    }
+
+    &__items {
+        margin-top: 16px;
+    }
+
+    &__item {
+        display: flex;
+        padding: 40px 0;
+        &:not(:last-child) {
+            border-bottom: solid $grey-lighter 1px;
+        }
+        &:first-child {
+            padding-top: 0;
+        }
+    }
+
+    &__image {
+        margin-right: 97px;
+        width: 388px;
+        @include respond-from('large') { 
+            margin-right: vw-large(97px);
+            width: vw-large(388px);
+        }
+    }
+
+    &__country {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.02em;
+        margin-right: 24px;
+        width: 172px;
+
+        @include respond-from('large') {
+            font-size: vw-large(24px);
+            line-height: vw-large(28px);
+            margin-right: vw-large(24px);
+            width: vw-large(172px);
+        }
+    }
+
+    &__info-row {
+        flex-grow: 1;
+        display: flex;
+        flex-wrap: wrap;
+        color: $dark-grey;
+        margin-bottom: 24px;
+
+        gap: 24px;
+        width: 461px;
+        @include respond-from('large') { 
+            gap: vw-large(24px);
+            width: vw-large(461px);
+        }
+    }
+
+    &__address {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__contacts {
+        min-width: 170px;
+        @include respond-from('large') {
+            width: vw-large(170px);
+        }
+    }
+
+    &__requisites {
+        width: 100%;
+        flex-grow: 1;
+        border-top: solid 1px $grey-lighter;
+
+        padding-top: 24px;
+        @include respond-from('large') { 
+            padding-top: vw-large(24px);
+        }
+    }
+
+    &__link {
+        font-weight: 600;
+        color: inherit;
+        text-decoration: underline;
+        display: block;
+
+        font-size: 16px;
+        line-height: 22.4px;
+
+        @include respond-from('large') { 
+            font-size: vw-large(16px);
+            line-height: vw-large(22.4px);
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &--black {
+            color: $black;
+        }
+    }
+
+    &__phone {
+        font-weight: 600;
+        color: $black;
+        display: block;
+
+        font-size: 16px;
+        line-height: 22.4px;
+
+        @include respond-from('large') { 
+            font-size: vw-large(16px);
+            line-height: vw-large(22.4px);
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        @include respond-from('large') { 
+            margin-bottom: vw-large(8px);
+        }
+    }
+
+    &__accordion {
+        position: relative;
+        background-color: transparent;
+        height: unset;
+        color: $black;
+        cursor: pointer;
+        width: 100%;
+        justify-content: flex-start;
+        border: none;
+        outline: none;
+        transition: 0.4s;
+
+        padding: 0 30px 0 0;
+        @include respond-from('large') { 
+            padding: 0 vw-large(30px) 0 0;
+        }
+        
+        &:after {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='21' viewBox='0 0 20 21' fill='none'%3E%3Cg clip-path='url(%23clip0_148_1494)'%3E%3Cpath d='M10 12.668V23.5013' stroke='%23303033' stroke-width='1.5' stroke-linecap='square'/%3E%3Cpath d='M4.16406 18.5L9.9974 24.3333L15.8307 18.5' stroke='%23303033' stroke-width='1.5' stroke-linecap='square'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_148_1494'%3E%3Crect width='20' height='20' fill='white' transform='matrix(0 1 1 0 0 0.5)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+            position: absolute;
+            right: 0;
+        }
+
+        &.active {
+            &::after {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cg clip-path='url(%23clip0_148_1501)'%3E%3Cpath d='M10 23.832V12.9987' stroke='%23F34D03' stroke-width='1.5' stroke-linecap='square'/%3E%3Cpath d='M4.16406 18L9.9974 12.1667L15.8307 18' stroke='%23F34D03' stroke-width='1.5' stroke-linecap='square'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_148_1501'%3E%3Crect width='20' height='20' fill='white' transform='matrix(0 -1 1 0 0 20)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");;
+            }
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__panel {
+        padding: 16px 0;
+        background-color: white;
+        display: none;
+        overflow: hidden;
+        p {
+            line-height: 22.4px;
+            @include respond-from('large') { 
+                line-height: vw-large(22.4px);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
