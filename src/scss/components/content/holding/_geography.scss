@@ -1,0 +1,40 @@
+.geography {
+  .container {
+
+  }
+
+  svg {
+    display: none;
+    .country {
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      path{
+        position: relative;
+        z-index: 1;
+      }
+      &:hover {
+        opacity: 0.9;
+
+        & + .country__name {
+          opacity: 1;
+          z-index: 999999;
+        }
+
+        & + .country__name + .country__name {
+          opacity: 1;
+          z-index: 999999;
+        }
+      }
+    }
+
+    .country + .country__name {
+      opacity: 0;
+      transition: all .2s ease-in-out;
+    }
+
+    .country + .country__name + .country__name {
+      opacity: 0;
+      transition: all .2s ease-in-out;
+    }
+  }
+}

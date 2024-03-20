@@ -1,0 +1,243 @@
+.roles {
+  .container {
+
+  }
+
+  &__title {
+    color: $black;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      line-height: vw-large(46px);
+      margin-bottom: vw-large(16px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      line-height: vw-medium(38px);
+      margin-bottom: vw-medium(16px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      line-height: vw-small(38px);
+      margin-bottom: vw-small(16px);
+    }
+  }
+
+  &__text {
+    color: $black;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 56px;
+    @include respond-from('large') {
+      font-size: vw-large(24px);
+      line-height: vw-large(34px);
+      margin-bottom: vw-large(56px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(18px);
+      line-height: vw-medium(26px);
+      margin-bottom: vw-medium(40px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(16px);
+      line-height: vw-small(24px);
+      margin-bottom: vw-small(32px);
+    }
+  }
+
+  &__items {
+
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    transition: all .3s ease;
+    border: 1px solid $grey;
+    padding: 24px 40px;
+    @include respond-from('large') {
+      padding: vw-large(24px) vw-large(40px);
+    }
+    @include respond-from('medium') {
+      padding: vw-medium(16px) vw-medium(24px);
+    }
+    @include respond-from('small') {
+      padding: vw-small(16px);
+    }
+    &.active {
+      border: 1px solid $orange;
+
+      .roles__item__title {
+        margin-bottom: 40px;
+        @include respond-from('large') {
+          margin-bottom: vw-large(40px);
+        }
+        @include respond-from('medium') {
+          margin-bottom: vw-medium(24px);
+        }
+        @include respond-from('small') {
+          margin-bottom: vw-small(24px);
+        }
+        &:after {
+          transform: rotate(180deg);
+          top: 0;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: 40px;
+        height: 40px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 8.33594V30.0026" stroke="%23303033" stroke-width="2" stroke-linecap="square"/><path d="M8.33203 20L19.9987 31.6667L31.6654 20" stroke="%23303033" stroke-width="2" stroke-linecap="square"/></svg>');
+        background-size: cover;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        @include respond-from('large') {
+          width: vw-large(40px);
+          height: vw-large(40px);
+        }
+        @include respond-from('medium') {
+          width: vw-medium(32px);
+          height: vw-medium(32px);
+        }
+        @include respond-from('small') {
+          width: vw-small(32px);
+          height: vw-small(32px);
+        }
+      }
+
+      @include respond-from('large') {
+        font-size: vw-large(28px);
+        line-height: vw-large(32px);
+        //margin-bottom: vw-large(44px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(24px);
+        line-height: vw-medium(28px);
+        //margin-bottom: vw-medium(26px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(20px);
+        line-height: vw-small(24px);
+        //margin-bottom: vw-small(26px);
+      }
+    }
+
+    &__content {
+      max-height: 0;
+      overflow: hidden;
+      //margin-top: 0;
+      transition: all 0.3s ease;
+
+      &.active {
+        //max-height: 2000px;
+      }
+    }
+
+    &__subtitle {
+      font-size: 24px;
+      line-height: 28px;
+      margin-bottom: 8px;
+      @include respond-from('large') {
+        font-size: vw-large(24px);
+        line-height: vw-large(28px);
+        margin-bottom: vw-large(8px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+        line-height: vw-medium(24px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(18px);
+        line-height: vw-small(20px);
+        margin-bottom: vw-small(8px);
+      }
+    }
+
+    &__text {
+      font-size: 20px;
+      line-height: 30px;
+      margin-bottom: 32px;
+      @include respond-from('large') {
+        font-size: vw-large(20px);
+        line-height: vw-large(30px);
+        margin-bottom: vw-large(32px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(16px);
+        line-height: vw-medium(24px);
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(16px);
+        line-height: vw-small(24px);
+        margin-bottom: vw-small(16px);
+      }
+    }
+
+    &__list {
+      margin: 0 0 32px 0;
+      @include respond-from('large') {
+        margin: 0 0 vw-large(32px) 0;
+      }
+      @include respond-from('medium') {
+        margin: 0 0 vw-medium(16px) 0;
+      }
+      @include respond-from('small') {
+        margin: 0 0 vw-small(16px) 0;
+      }
+
+      li {
+        font-size: 18px;
+        line-height: 28px;
+        margin-bottom: 4px;
+        @include respond-from('large') {
+          font-size: vw-large(18px);
+          line-height: vw-large(28px);
+          margin-bottom: vw-large(4px);
+        }
+        @include respond-from('medium') {
+          font-size: vw-medium(16px);
+          line-height: vw-medium(24px);
+          margin-bottom: vw-medium(4px);
+        }
+        @include respond-from('small') {
+          font-size: vw-small(16px);
+          line-height: vw-small(24px);
+          margin-bottom: vw-small(4px);
+        }
+      }
+    }
+
+    &__btn {
+      background: $orange;
+      color: $white;
+      margin-top: 40px;
+      @include respond-from('large') {
+        margin-top: vw-large(40px);
+      }
+      @include respond-from('medium') {
+        margin-top: vw-medium(24px);
+      }
+      @include respond-from('small') {
+        margin-top: vw-small(24px);
+        width: 100%;
+      }
+    }
+  }
+}

@@ -51,15 +51,7 @@
     overflow: hidden;
     padding: 0 96px;
     position: relative;
-    @include respond-from('large') {
-      padding: 0 vw-large(96px);
-    }
-    @include respond-from('medium') {
-      padding: 0 vw-medium(50px);
-    }
-    @include respond-from('small') {
-      padding: 0 vw-small(80px);
-    }
+
     &__img{
       width: 170px!important;
       margin-right: 100px!important;

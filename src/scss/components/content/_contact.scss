@@ -3,30 +3,88 @@
   &__container{
     display: flex;
     gap: 40px;
+    @include respond-from('large') {
+      gap: vw-large(40px);
+    }
+    @include respond-from('medium') {
+      flex-direction: column;
+      gap: vw-medium(32px);
+      flex-wrap: wrap;
+    }
+    @include respond-from('small') {
+      gap: vw-small(32px );
+    }
   }
   &__info{
     width: 30%;
+    @include respond-from('medium') {
+      width: 100%;
+    }
     &__title{
       color: $black;
       font-size: 40px;
       line-height: 32px;
       font-weight: 700;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(40px);
+        line-height: vw-large(32px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(32px);
+        line-height: vw-medium(38px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(32px);
+        line-height: vw-small(38px);
+        margin-bottom: vw-small(8px);
+      }
     }
     &__text{
       font-size: 18px;
       font-weight: 400;
       line-height: 26px;
       color: $dark-grey;
+      @include respond-from('large') {
+        font-size: vw-large(18px);
+        line-height: vw-large(26px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(16px);
+        line-height: vw-medium(22px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(16px);
+        line-height: vw-small(22px);
+      }
     }
   }
   &__form{
     width: 70%;
+    @include respond-from('medium') {
+      width: 100%;
+    }
     &__wrapper{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
       margin-bottom: 24px;
+      @include respond-from('large') {
+        gap: vw-large(24px);
+        margin-bottom: vw-large(24px);
+      }
+      @include respond-from('medium') {
+        gap: vw-medium(16px);
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        gap: vw-small(16px);
+        margin-bottom: vw-small(16px);
+        display: flex;
+        flex-direction: column;
+      }
     }
     form{
       width: 100%;
@@ -34,6 +92,16 @@
         height: 50px;
         background: transparent;
         border: 1px solid $grey;
+        @include respond-from('large') {
+          border: 1px solid $grey;
+          height: vw-large(50px);
+        }
+        @include respond-from('medium') {
+          height: vw-medium(46px);
+        }
+        @include respond-from('small') {
+          height: vw-small(46px);
+        }
       }
       textarea{
         background: transparent;
@@ -46,6 +114,15 @@
       margin-top: 32px;
       background: $orange;
       color: $white;
+      @include respond-from('large') {
+        margin-top: vw-large(32px);
+      }
+      @include respond-from('medium') {
+        margin-top: vw-medium(24px);
+      }
+      @include respond-from('small') {
+        margin-top: vw-small(32px);
+      }
     }
   }
 }

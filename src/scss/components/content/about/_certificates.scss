@@ -9,19 +9,68 @@
     line-height: 48px;
     font-weight: 700;
     margin-bottom: 56px;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      line-height: vw-large(48px);
+      margin-bottom: vw-large(56px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      line-height: vw-medium(37px);
+      margin-bottom: vw-medium(56px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      line-height: vw-small(37px);
+      margin-bottom: vw-small(56px);
+    }
   }
   &__items{
     overflow: hidden;
     padding: 0 70px;
     position: relative;
+    @include respond-from('large') {
+      padding: 0 vw-large(96px);
+    }
+    @include respond-from('medium') {
+      padding: 0 vw-medium(50px);
+    }
+    @include respond-from('small') {
+      padding: 0 vw-small(80px);
+    }
     &__img{
-
+      width: 170px!important;
+      margin-right: 100px!important;
+      @include respond-from('large') {
+        margin-right: vw-large(100px)!important;
+        width: vw-large(170px)!important;
+      }
+      @include respond-from('medium') {
+        margin-right: vw-medium(50px)!important;
+        width: vw-medium(175px)!important;
+      }
+      @include respond-from('small') {
+        margin-right: vw-small(90px)!important;
+        width: vw-small(195px)!important;
+      }
     }
     .swiper-button-next, .swiper-button-prev{
       top: auto;
       width: 40px;
       height: 40px;
       margin-top: 0;
+      @include respond-from('large') {
+        width: vw-large(40px);
+        height: vw-large(40px);
+      }
+      @include respond-from('medium') {
+        width: vw-medium(40px);
+        height: vw-medium(40px);
+      }
+      @include respond-from('small') {
+        width: vw-small(40px);
+        height: vw-small(40px);
+      }
       &:after{
         display: none;
       }

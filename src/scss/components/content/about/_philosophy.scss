@@ -5,17 +5,60 @@
     font-weight: 700;
     color: $black;
     margin-bottom: 48px;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      margin-bottom: vw-large(48px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      margin-bottom: vw-medium(40px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      margin-bottom: vw-small(40px);
+    }
   }
   &__items{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 105px;
+    @include respond-from('large') {
+      gap: vw-large(105px);
+    }
+    @include respond-from('medium') {
+      gap: vw-medium(25px);
+    }
+    @include respond-from('small') {
+      display: flex;
+      flex-direction: column;
+      gap: vw-small(40px);
+    }
     &-detail{
       margin-top: 56px;
+      @include respond-from('large') {
+        margin-top: vw-large(56px);
+      }
+      @include respond-from('medium') {
+        margin-top: vw-medium(40px);
+      }
+      @include respond-from('small') {
+        margin-top: vw-small(40px);
+      }
       &__blocks{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 105px;
+        @include respond-from('large') {
+          gap: vw-large(24px) vw-large(105px);
+        }
+        @include respond-from('medium') {
+          gap: vw-medium(12px) vw-medium(50px);
+        }
+        @include respond-from('small') {
+          display: flex;
+          flex-direction: column;
+          gap: vw-small(24px);
+        }
       }
     }
   }
@@ -24,22 +67,73 @@
       width: 72px;
       height: 72px;
       margin-bottom: 8px;
+      @include respond-from('large') {
+        width: vw-large(72px);
+        height: vw-large(72px);
+        margin-bottom: vw-large(8px);
+      }
+      @include respond-from('medium') {
+        width: vw-medium(72px);
+        height: vw-medium(72px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        width: vw-small(64px);
+        height: vw-small(64px);
+        margin-bottom: vw-small(8px);
+      }
     }
     &__title{
       font-size: 32px;
       font-weight: 700;
       line-height: 36px;
       color: $black;
-      margin-bottom: 16px
+      margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(32px);
+        line-height: vw-large(36px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(24px);
+        line-height: vw-medium(28px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(24px);
+        line-height: vw-small(28px);
+        margin-bottom: vw-small(8px);
+      }
     }
     &__text{
       font-size: 18px;
       font-weight: 500;
       line-height: 26px;
       color: $black;
+      @include respond-from('large') {
+        font-size: vw-large(18px);
+        line-height: vw-large(26px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(16px);
+        line-height: vw-medium(22px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(16px);
+        line-height: vw-small(22px);
+      }
     }
     &__info{
       padding-left: 30px;
+      @include respond-from('large') {
+        padding-left: vw-large(30px);
+      }
+      @include respond-from('medium') {
+        padding-left: vw-medium(30px);
+      }
+      @include respond-from('small') {
+        padding-left: vw-small(30px);
+      }
       &__title{
         font-size: 24px;
         font-weight: 700;
@@ -47,6 +141,21 @@
         color: $black;
         margin-bottom: 8px;
         position: relative;
+        @include respond-from('large') {
+          font-size: vw-large(24px);
+          line-height: vw-large(34px);
+          margin-bottom: vw-large(8px);
+        }
+        @include respond-from('medium') {
+          font-size: vw-medium(20px);
+          line-height: vw-medium(28px);
+          margin-bottom: vw-medium(8px);
+        }
+        @include respond-from('small') {
+          font-size: vw-small(20px);
+          line-height: vw-small(28px);
+          margin-bottom: vw-small(8px);
+        }
         &:before{
           position: absolute;
           content: '';
@@ -55,6 +164,21 @@
           background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" fill="none"><g clip-path="url(%23clip0_101_487)"><path d="M1.22266 17H16.5004" stroke="%23303033" stroke-width="3" stroke-linecap="square"/><path d="M11 10.5859L17.4167 17.0026L11 23.4193" stroke="%23303033" stroke-width="3" stroke-linecap="square"/></g><defs><clipPath id="clip0_101_487"><rect width="22" height="22" fill="white" transform="translate(0 6)"/></clipPath></defs></svg>');
           background-size: cover;
           left: -30px;
+          @include respond-from('large') {
+            width: vw-large(22px);
+            height: vw-large(28px);
+            left: vw-large(-30px);
+          }
+          @include respond-from('medium') {
+            width: vw-medium(22px);
+            height: vw-medium(28px);
+            left: vw-medium(-30px);
+          }
+          @include respond-from('small') {
+            width: vw-small(22px);
+            height: vw-small(28px);
+            left: vw-small(-30px);
+          }
         }
       }
       &__text{
@@ -62,6 +186,18 @@
         font-weight: 500;
         line-height: 26px;
         color: $black;
+        @include respond-from('large') {
+          font-size: vw-large(18px);
+          line-height: vw-large(26px);
+        }
+        @include respond-from('medium') {
+          font-size: vw-medium(16px);
+          line-height: vw-medium(22px);
+        }
+        @include respond-from('small') {
+          font-size: vw-small(16px);
+          line-height: vw-small(22px);
+        }
       }
     }
   }

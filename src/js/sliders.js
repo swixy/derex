@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             delay: 4000,
             disableOnInteraction: false
         },
-        // pagination: true,
+
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -41,21 +41,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const partnersSwiper = new Swiper('.partners__items', {
         slidesPerView: "auto",
         createElements: true,
-        // spaceBetween: 100,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
-        // breakpoints: {
-        //     320: {
-        //         slidesPerView: 3,
-        //         spaceBetween: 0,
-        //     },
-        //     1024: {
-        //         slidesPerView: 3,
-        //         spaceBetween: 0,
-        //     }
-        // }
+
     });
     const certificatesSwiper = new Swiper('.certificates__items', {
         slidesPerView: 4,
@@ -67,12 +57,43 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
     const teamSwiper = new Swiper('.team__items', {
-        slidesPerView: 5,
+        slidesPerView: "auto",
         createElements: true,
         spaceBetween: 50,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
+        },
+
+    });
+
+    const sliderVerticalLists = new Swiper(".sliderVertical__lists", {
+        spaceBetween: 10,
+        createElements: true,
+        slidesPerView: 3,
+        direction: "vertical",
+    });
+    const sliderVerticalContent= new Swiper(".sliderVertical__content", {
+        spaceBetween: 10,
+        createElements: true,
+        direction: "vertical",
+        thumbs: {
+            swiper: sliderVerticalLists,
+        },
+    });
+
+    const sliderStepLists = new Swiper(".slider__step__items", {
+        spaceBetween: 10,
+        createElements: true,
+        slidesPerView: 5,
+        direction: "vertical",
+    });
+    const sliderStepContent= new Swiper(".slider__step__contents", {
+        spaceBetween: 10,
+        createElements: true,
+        direction: "vertical",
+        thumbs: {
+            swiper: sliderStepLists,
         },
     });
 

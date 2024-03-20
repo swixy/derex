@@ -1,34 +1,90 @@
-.history{
+.history {
   padding: 0;
   position: relative;
-  .container{
+
+  .container {
     padding-right: 0;
     display: flex;
+    @include respond-from('small') {
+      flex-direction: column;
+    }
   }
-  &__info{
+
+  &__info {
     width: 60%;
     padding: 120px 120px 120px 0;
-    &__title{
+    @include respond-from('large') {
+      padding: vw-large(120px) vw-large(120px) vw-large(120px) 0;
+    }
+    @include respond-from('medium') {
+      padding: vw-medium(80px) vw-medium(50px) vw-medium(80px) 0;
+    }
+    @include respond-from('small') {
+      padding: vw-small(56px) vw-small(16px) vw-small(40px) vw-small(16px);
+      width: 100%;
+    }
+
+    &__title {
       font-size: 40px;
       font-weight: 700;
       color: $black;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(40px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(32px);
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(32px);
+        margin-bottom: vw-small(16px);
+      }
     }
-    &__text{
-      p{
+
+    &__text {
+      p {
         font-size: 18px;
         font-weight: 500;
         line-height: 26px;
         color: $black;
         margin-bottom: 8px;
+        @include respond-from('large') {
+          font-size: vw-large(18px);
+          line-height: vw-large(26px);
+          margin-bottom: vw-large(8px);
+        }
+        @include respond-from('medium') {
+          font-size: vw-medium(16px);
+          line-height: vw-medium(22px);
+          margin-bottom: vw-medium(8px);
+        }
+        @include respond-from('small') {
+          font-size: vw-small(16px);
+          line-height: vw-small(22px);
+          margin-bottom: vw-small(8px);
+        }
       }
     }
   }
-  &__image{
+
+  &__image {
     width: 38vw;
     height: 100%;
     position: absolute;
     right: 0;
     object-fit: cover;
+    @include respond-from('large') {
+
+    }
+    @include respond-from('medium') {
+
+    }
+    @include respond-from('small') {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
   }
 }

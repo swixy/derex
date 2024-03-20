@@ -1,0 +1,105 @@
+.companies {
+  background: $light-grey;
+
+  &__title {
+    color: $black;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      line-height: vw-large(46px);
+      margin-bottom: vw-large(16px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      line-height: vw-medium(38px);
+      margin-bottom: vw-medium(16px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      line-height: vw-small(38px);
+      margin-bottom: vw-small(16px);
+    }
+  }
+
+  &__text {
+    color: $black;
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 56px;
+    @include respond-from('large') {
+      font-size: vw-large(24px);
+      line-height: vw-large(34px);
+      margin-bottom: vw-large(56px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(20px);
+      line-height: vw-medium(28px);
+      margin-bottom: vw-medium(48px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(20px);
+      line-height: vw-small(28px);
+      margin-bottom: vw-small(40px);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 96px;
+    justify-content: space-around;
+    gap: 26px;
+    @include respond-from('large') {
+      padding: 0 vw-large(96px);
+      gap: vw-large(26px);
+    }
+    @include respond-from('medium') {
+      padding: 0;
+      gap: vw-medium(16px);
+    }
+    @include respond-from('small') {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: vw-small(32px);
+      column-gap: vw-small(8px);
+    }
+  }
+
+  &__item {
+    &__img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 16px;
+      @include respond-from('large') {
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        margin-bottom: vw-medium(16px);
+      }
+      @include respond-from('small') {
+        margin-bottom: vw-small(12px);
+      }
+    }
+
+    &__text {
+      font-size: 18px;
+      line-height: 24px;
+      text-align: center;
+      @include respond-from('large') {
+        font-size: vw-large(18px);
+        line-height: vw-large(24px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(16px);
+        line-height: vw-medium(22px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(14px);
+        line-height: vw-small(20px);
+      }
+    }
+  }
+}

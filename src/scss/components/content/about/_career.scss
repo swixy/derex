@@ -6,17 +6,44 @@
   .container {
     padding-right: 0;
     display: flex;
+    @include respond-from('small') {
+      flex-direction: column-reverse;
+      padding-left: 0;
+    }
   }
 
   &__info {
     width: 60%;
     padding: 56px 156px 56px 0;
+    @include respond-from('large') {
+      padding: vw-large(56px) vw-large(156px) vw-large(56px) 0;
+    }
+    @include respond-from('medium') {
+      padding: vw-medium(56px) vw-medium(82px) vw-medium(56px) 0;
+      width: 55%;
+    }
+    @include respond-from('small') {
+      width: 100%;
+      padding: vw-small(32px) vw-small(16px);
+    }
 
     &__title {
       font-size: 40px;
       font-weight: 700;
       color: $white;
       margin-bottom: 16px;
+      @include respond-from('large') {
+        font-size: vw-large(40px);
+        margin-bottom: vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(32px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(32px);
+        margin-bottom: vw-small(8px);
+      }
     }
 
     &__text {
@@ -25,12 +52,40 @@
       line-height: 28px;
       color: $white;
       margin-bottom: 48px;
+      @include respond-from('large') {
+        font-size: vw-large(20px);
+        line-height: vw-large(28px);
+        margin-bottom: vw-large(48px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(18px);
+        line-height: vw-medium(26px);
+        margin-bottom: vw-large(32px);
+        br{
+          display: none;
+        }
+      }
+      @include respond-from('small') {
+        font-size: vw-small(16px);
+        line-height: vw-small(22px);
+        margin-bottom: vw-small(24px);
+      }
     }
 
     &__btn {
       background: $white;
       color: $black;
       font-size: 20px;
+      @include respond-from('large') {
+        font-size: vw-large(20px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(20px);
+        width: 100%;
+      }
     }
   }
 
@@ -40,5 +95,15 @@
     position: absolute;
     right: 0;
     object-fit: cover;
+    @include respond-from('large') {
+
+    }
+    @include respond-from('medium') {
+      width: 45%;
+    }
+    @include respond-from('small') {
+      width: 100%;
+      position: relative;
+    }
   }
 }
