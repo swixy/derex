@@ -8,17 +8,19 @@
  * @author   vunterberg <vladunter404@gmail.com>
  * @license  GNU Public License
  * @link     https://developer.wordpress.org/themes/template-files-section/page-template-files/
+ * 
+ * @var array $args
  */
 ?>
 
 <section class="filter">
     <div class="container">
         <div class="filter__items">
-            <button class="filter__item active">2024</button>
-            <button class="filter__item">2023</button>
-            <button class="filter__item">2022</button>
-            <button class="filter__item">2021</button>
-            <button class="filter__item">2020</button>
+            <?php foreach($args['items'] as $key => $item):?>
+                <button class="filter__item <?php echo $key === array_key_first($args['items']) ? 'active' : '';?>">
+                    <?php echo $item; ?>
+                </button>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template name: News Page
+ * Template name: Project Page
  * Template Post Type: page
  * php version 8.3.3
  * 
@@ -18,24 +18,25 @@ get_header(); ?>
         'template-parts/news/head',
         null, 
         [
-            'title' => 'News',
+            'title' => 'Projects',
             'description' => 'Lorem ipsum dolor sit amet consectetur. Nulla lorem pharetra enim nec.<br>Diam dignissim quam vulputate sed enim.'
         ]
     );
     get_template_part(
-        'template-parts/common/filter', 
+        'template-parts/common/filter',
         null,
-        ['items' => 
-            [
-                '2024' => '2024',
-                '2023' => '2023',
-                '2022' => '2022',
-                '2021' => '2021',
-                '2020' => '2020',
-            ]
+        [
+            'items' =>
+                [
+                    'all-works' => 'All Works',
+                    'Category1' => 'Category',
+                    'Category2' => 'Category',
+                    'Category3' => 'Category',
+                    'Category4' => 'Category',
+                ]
         ]
     );
-    get_template_part('template-parts/news/news');
+    get_template_part('template-parts/projects/projects');
     ?>
 </div>
 <?php

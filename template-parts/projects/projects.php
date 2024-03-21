@@ -1,6 +1,6 @@
 <?php
 /**
- * News Cards for News page
+ * Projects Cards for Projects page
  * php version 8.3.3
  * 
  * @category Component
@@ -11,13 +11,15 @@
  */
 ?>
 
-<section class="news">
+<section class="projects">
     <div class="container">
-        <div class="news__row">
+        <div class="projects__grid--first">
+            <?php get_template_part('template-parts/common/card', null, ['type' => 'big']); ?>
             <?php get_template_part('template-parts/common/card'); ?>
             <?php get_template_part('template-parts/common/card'); ?>
+            <?php get_template_part('template-parts/common/card', null, ['type' => 'big']); ?>
         </div>
-        <div class="news__grid">
+        <div class="projects__grid">
             <?php get_template_part('template-parts/common/card'); ?>
             <?php get_template_part('template-parts/common/card'); ?>
             <?php get_template_part('template-parts/common/card'); ?>

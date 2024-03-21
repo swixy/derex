@@ -1,0 +1,34 @@
+/* HTML: <div class="loader"></div> */
+.preloader {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 108px;
+        @include respond-from('large') {
+            margin-top: vw-large(108px);
+        }
+    }
+
+    width: 40px;
+    aspect-ratio: 1;
+    display: grid;
+    background:
+        linear-gradient(90deg,rgb(0 0 0/25%) 30%,#0000 0 70%,rgb(0 0 0/75% ) 0) 50%/100% 8%,
+        linear-gradient(0deg ,rgb(0 0 0/50%) 30%,#0000 0 70%,rgb(0 0 0/100%) 0) 50%/8% 100%;
+    background-repeat: no-repeat;
+    animation: l23 2s infinite steps(8);
+
+    
+    &::after {
+       content: "";
+       grid-area: 1/1;
+       background: inherit;
+       opacity: 0.915;
+       transform: rotate(45deg);
+    }
+  }
+  @keyframes l23 {
+    100% {transform: rotate(1turn)}
+  }
+  
+  

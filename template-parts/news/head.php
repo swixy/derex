@@ -8,17 +8,20 @@
  * @author   vunterberg <vladunter404@gmail.com>
  * @license  GNU Public License
  * @link     https://developer.wordpress.org/themes/template-files-section/page-template-files/
+ * 
+ * @var array $args
  */
+
+ extract($args);
 ?>
 
 <section class="hero-about">
     <div class="container">
         <h1 class="hero-about__title">
-            News
+            <?php echo $title; ?>
         </h1>
         <p class="hero-about__text">
-            Lorem ipsum dolor sit amet consectetur. Nulla lorem pharetra enim nec.<br>
-            Diam dignissim quam vulputate sed enim. 
+            <?php echo $description; ?>
         </p>
     </div>
 </section>

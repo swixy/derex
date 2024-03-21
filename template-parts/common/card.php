@@ -11,7 +11,7 @@
  */
 ?>
 
-<div class="card">
+<div class="card <?php echo $args['type']; ?>">
     <img class="card__thumb" src="<?php echo get_template_directory_uri(); ?>/src/image/project.jpg" alt="Holder">
     <div class="card__meta">
         16.03.2024 / 15:59

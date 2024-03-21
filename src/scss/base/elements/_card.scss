@@ -1,8 +1,16 @@
 .card {
     color: $black;
-    
+
     &__thumb {
         margin-bottom: 16px;
+    }
+
+    &.big {
+        .card__thumb {
+            min-height: 690px;
+            object-fit: cover;
+            margin-bottom: 16px;
+        }
     }
 
     &__meta {
