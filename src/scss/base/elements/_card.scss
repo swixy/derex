@@ -1,0 +1,26 @@
+.card {
+    color: $black;
+    
+    &__thumb {
+        margin-bottom: 16px;
+    }
+
+    &__meta {
+        letter-spacing: -0.03em;
+        font-weight: 400;
+        color: $grey;
+
+        margin-bottom: 4px;
+        font-size: 14px;
+        line-height: 19.6px;
+        @include respond-from('large') {
+            font-size: vw-large(14px);
+            line-height: vw-large(19.6px);
+            margin-bottom: vw-large(4px);
+          }
+    }
+
+    &__description {
+        color: $black;
+    }
+}

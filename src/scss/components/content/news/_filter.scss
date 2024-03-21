@@ -1,0 +1,25 @@
+.filter {
+    padding: 0;
+
+    &__items {
+        display: flex;
+        gap: 32px;
+        @include respond-from('large') { 
+            gap: vw-large(32px);
+        }
+    }
+
+    &__item {
+        background: transparent;
+        padding: 0;
+        border: none;
+        text-decoration: underline;
+        font-weight: 400;
+
+        &:hover, &.active {
+            color: $orange;
+            font-weight: 700;
+            text-decoration: none;
+        }
+    }
+}

@@ -15,7 +15,7 @@ get_header(); ?>
 <div class="news">
     <?php
     get_template_part('template-parts/news/head');
-    get_template_part('template-parts/news/filters');
+    get_template_part('template-parts/news/filter');
     get_template_part('template-parts/news/news');
     ?>
 </div>

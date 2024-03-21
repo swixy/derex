@@ -45,7 +45,6 @@ address {
 		font-size: 16px;
 		line-height: 19.2px;
 		margin-bottom: 16px;
-		font-weight: 600;
 		@include respond-from('large') {
 		  font-size: vw-large(16px);
 		  line-height: vw-large(19.2px);
