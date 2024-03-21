@@ -1,0 +1,34 @@
+.hero-contact {
+  position: relative;
+  
+  @include respond-from('large') {
+    padding: vw-large(131.5px) 0 vw-large(131.5px) vw-large(485px);
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+
+    &-wrapper {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: vw-large(514px);
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .contact__container {
+    flex-direction: column;
+    max-width: 655px;
+    & > * {
+      width: 100%;
+    }
+  }
+}

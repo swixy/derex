@@ -10,3 +10,25 @@ h6 {
 h1{
 
 }
+.h2 {
+    color: $black;
+    font-size: 40px;
+    line-height: 46px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    @include respond-from('large') {
+      font-size: vw-large(40px);
+      line-height: vw-large(46px);
+      margin-bottom: vw-large(16px);
+    }
+    @include respond-from('medium') {
+      font-size: vw-medium(32px);
+      line-height: vw-medium(38px);
+      margin-bottom: vw-medium(16px);
+    }
+    @include respond-from('small') {
+      font-size: vw-small(32px);
+      line-height: vw-small(38px);
+      margin-bottom: vw-small(16px);
+    }
+  }
