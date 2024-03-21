@@ -25,8 +25,6 @@
             <?php get_template_part('template-parts/common/card'); ?>
             <?php get_template_part('template-parts/common/card'); ?>
         </div>
-        <div class="preloader__wrapper">
-            <div class="preloader"></div>
-        </div>
+        <?php get_template_part('template-parts/common/preloader'); ?>
     </div>
 </section>

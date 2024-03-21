@@ -1143,14 +1143,12 @@ button {
   text-decoration: none;
 }
 
-/* HTML: <div class="loader"></div> */
 .preloader {
+  position: relative;
   width: 40px;
-  aspect-ratio: 1;
-  display: grid;
-  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25) 30%, rgba(0, 0, 0, 0) 0 70%, rgba(0, 0, 0, 0.75) 0) 50%/100% 8%, linear-gradient(0deg, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0) 0 70%, rgb(0, 0, 0) 0) 50%/8% 100%;
-  background-repeat: no-repeat;
-  animation: l23 2s infinite steps(8);
+  height: 40px;
+  display: inline-block;
+  border-radius: 10px;
 }
 .preloader__wrapper {
   display: flex;
@@ -1162,17 +1160,62 @@ button {
     margin-top: 7.5vw;
   }
 }
-.preloader::after {
-  content: "";
-  grid-area: 1/1;
-  background: inherit;
-  opacity: 0.915;
-  transform: rotate(45deg);
+.preloader div {
+  width: 5%;
+  height: 22%;
+  background: rgb(48, 48, 51);
+  position: absolute;
+  left: 46%;
+  top: 38%;
+  opacity: 0;
+  -webkit-border-radius: 50px;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  -webkit-animation: fade 1s linear infinite;
+  -webkit-animation-delay: -0.5837s;
+}
+.preloader div.bar1 {
+  -webkit-transform: rotate(0deg) translate(0, -130%);
+  -webkit-animation-delay: 0s;
+}
+.preloader div.bar2 {
+  -webkit-transform: rotate(45deg) translate(0, -130%);
+  -webkit-animation-delay: -0.833s;
+}
+.preloader div.bar3 {
+  -webkit-transform: rotate(90deg) translate(0, -130%);
+  -webkit-animation-delay: -0.7497s;
+}
+.preloader div.bar4 {
+  -webkit-transform: rotate(135deg) translate(0, -130%);
+  -webkit-animation-delay: -0.667s;
+}
+.preloader div.bar5 {
+  -webkit-transform: rotate(180deg) translate(0, -130%);
+  -webkit-animation-delay: -0.5s;
+}
+.preloader div.bar6 {
+  -webkit-transform: rotate(225deg) translate(0, -130%);
+  -webkit-animation-delay: -0.333s;
+}
+.preloader div.bar7 {
+  -webkit-transform: rotate(270deg) translate(0, -130%);
+  -webkit-animation-delay: -0.2497s;
+}
+.preloader div.bar8 {
+  -webkit-transform: rotate(270deg) translate(0, -130%);
+  -webkit-animation-delay: -0.167s;
+}
+.preloader div.bar9 {
+  -webkit-transform: rotate(315deg) translate(0, -130%);
+  -webkit-animation-delay: -0.0833s;
 }
 
-@keyframes l23 {
-  100% {
-    transform: rotate(1turn);
+@-webkit-keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.25;
   }
 }
 /*--------------------------------------------------------------
