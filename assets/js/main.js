@@ -37,7 +37,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**************************/
 /***/ (() => {
 
-eval("document.addEventListener(\"DOMContentLoaded\", e => {\n    const acc = document.getElementsByClassName(\"offices__accordion\");\n    let i;\n\n    for (i = 0; i < acc.length; i++) {\n    acc[i].addEventListener(\"click\", function() {\n        this.classList.toggle(\"active\");\n\n        const panel = this.nextElementSibling;\n        if (panel.style.display === \"block\") {\n        panel.style.display = \"none\";\n        } else {\n        panel.style.display = \"block\";\n        }\n    });\n    }\n});\n\n//# sourceURL=webpack://derex/./src/js/custom.js?");
+eval("document.addEventListener(\"DOMContentLoaded\", e => {\n    const acc = document.getElementsByClassName(\"offices__accordion\");\n\n    for (let i = 0; i < acc.length; i++) {\n        acc[i].addEventListener(\"click\", function() {\n            this.classList.toggle(\"active\");\n\n            const panel = this.nextElementSibling;\n            if (panel.style.display === \"block\") {\n            panel.style.display = \"none\";\n            } else {\n            panel.style.display = \"block\";\n            }\n        });\n    }\n\n    const years = document.getElementsByClassName(\"filter__item\");\n    for (let i = 0; i < years.length; i++) {\n        years[i].addEventListener(\"click\", function() { \n            Object.values(years).forEach(e => {\n                e.classList.remove(\"active\");\n            });\n            this.classList.add(\"active\");\n        });\n    }\n});\n\n//# sourceURL=webpack://derex/./src/js/custom.js?");
 
 /***/ }),
 

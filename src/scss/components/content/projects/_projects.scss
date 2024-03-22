@@ -1,0 +1,34 @@
+.projects {
+    padding-top: 32px;
+    @include respond-from('large') {
+        padding-top: vw-large(32px);
+    }
+
+    &__grid {
+        display: grid;
+        gap: 56px 27px; 
+        grid-template-columns: repeat(2, 1fr);
+        @include respond-from('large') { 
+            gap: vw-large(56px) vw-large(27px);
+        }
+
+        &--first {
+            gap: 27px;
+
+            column-count: 2;
+            column-gap: 27px;
+            
+            @include respond-from('large') { 
+                gap: vw-large(27px);
+                margin-bottom: vw-large(56px);
+            }
+
+            .card {
+                margin-bottom: 56px;
+                @include respond-from('large') {
+                    margin-bottom: vw-large(56px);
+                }
+            }
+        }
+    }
+}

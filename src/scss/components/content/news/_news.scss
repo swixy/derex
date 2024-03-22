@@ -1,0 +1,25 @@
+.news {
+    padding-top: 32px;
+    @include respond-from('large') {
+        padding-top: vw-large(32px);
+    }
+
+    &__row {
+        display: flex;
+        gap: 27px; 
+        margin-bottom: 56px;
+        @include respond-from('large') { 
+            gap: vw-large(27px);
+            margin-bottom: vw-large(56px);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        gap: 56px 27px; 
+        grid-template-columns: repeat(3, 1fr);
+        @include respond-from('large') { 
+            gap: vw-large(56px) vw-large(27px);
+        }
+    }
+}
