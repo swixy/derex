@@ -1,5 +1,6 @@
 import "../scss/index.scss"
 import "./sliders"
+import "./custom"
 
 document.addEventListener('DOMContentLoaded', function () {
 
