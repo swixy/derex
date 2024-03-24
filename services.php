@@ -9,6 +9,8 @@ get_header();
         <?php get_template_part('template-parts/services/hero') ?>
         <?php get_template_part('template-parts/services/sliderVertical') ?>
         <?php get_template_part('template-parts/services/tabs') ?>
+        <?php get_template_part('template-parts/services/advantages') ?>
+        <?php get_template_part('template-parts/services/imageHalf') ?>
         <?php get_template_part('template-parts/home/projects') ?>
     </div>
 <?php
