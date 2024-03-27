@@ -1,56 +1,37 @@
+<?php
+$projects_title = get_field('home_projects_title');
+$projects_items = get_field('home_projects_items');
+?>
 <section class="projects">
     <div class="container">
-        <h2 class="projects__title">
-            Our Projects
-            <a class="projects__link" href="">
-                See More
-            </a>
-        </h2>
-        <div class="projects__items">
-            <div class="projects__item swiper-slide">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/projectsHome1.webp" alt=""
-                     class="projects__item__img">
-                <h3 class="projects__item__title">
-                    Lorem ipsum dolor
-                </h3>
-                <p class="projects__item__text">
-                    Lorem ipsum dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.Lorem ipsum
-                    dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.
-                </p>
+        <?php if ($projects_title): ?>
+            <h2 class="projects__title">
+                <?php echo esc_html($projects_title) ?>
+                <a class="projects__link" href="/projects">
+                    See More
+                </a>
+            </h2>
+        <?php endif; ?>
+        <?php if ($projects_items): ?>
+            <div class="projects__items">
+                <?php
+                foreach ($projects_items as $item) {
+                    $title = get_the_title($item->ID);
+                    $image = get_the_post_thumbnail_url($item->ID);
+                    ?>
+                    <div class="projects__item swiper-slide">
+                        <img class="projects__item__img"
+                             src="<?php echo esc_url($image) ?>">
+                        <h3 class="projects__item__title">
+                            <?php echo esc_html($title) ?>
+                        </h3>
+                        <p class="projects__item__text">
+                            Lorem ipsum dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.Lorem ipsum
+                            dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.
+                        </p>
+                    </div>
+                <?php } ?>
             </div>
-            <div class="projects__item swiper-slide">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/projectsHome2.webp" alt=""
-                     class="projects__item__img">
-                <h3 class="projects__item__title">
-                    Lorem ipsum dolor
-                </h3>
-                <p class="projects__item__text">
-                    Lorem ipsum dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.Lorem ipsum
-                    dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.
-                </p>
-            </div>
-            <div class="projects__item swiper-slide">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/projectsHome3.webp" alt=""
-                     class="projects__item__img">
-                <h3 class="projects__item__title">
-                    Lorem ipsum dolor
-                </h3>
-                <p class="projects__item__text">
-                    Lorem ipsum dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.Lorem ipsum
-                    dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.
-                </p>
-            </div>
-            <div class="projects__item swiper-slide">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/projectsHome1.webp" alt=""
-                     class="projects__item__img">
-                <h3 class="projects__item__title">
-                    Lorem ipsum dolor
-                </h3>
-                <p class="projects__item__text">
-                    Lorem ipsum dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.Lorem ipsum
-                    dolor sit amet consectetur. Sed volutpat leo id elit urna purus odio.
-                </p>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>

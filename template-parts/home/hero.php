@@ -1,28 +1,45 @@
+<?php
+$main_disable = get_field('katemedia_main_disable');
+$home_info = get_field('home_hero_info');
+$hero_title = $home_info['home_hero_title'];
+$hero__text = $home_info['home__hero__text'];
+$hero_button = $home_info['hero_hero_button'];
+$hero_slider = get_field('home_hero_slider');
+?>
+
 <section class="hero">
     <div class="container">
         <div class="hero__info">
-            <h1 class="hero__info__title">
-                Partner in energy efficiency and progress
-            </h1>
-            <p class="hero__info__text">
-                Building system engineering. Telecommunications. <br>
-                Infrastructure. Solar energy solutions. LED lighting.
-            </p>
-            <button class="hero__info__btn">
-                Contact us
-            </button>
+            <?php if ($hero_title): ?>
+                <h1 class="hero__info__title">
+                    <?php echo esc_html($hero_title) ?>
+                </h1>
+            <?php endif; ?>
+            <?php if ($hero__text): ?>
+                <p class="hero__info__text">
+                    <?php echo wp_kses_post($hero__text) ?>
+                </p>
+            <?php endif; ?>
+            <?php if ($hero_button): ?>
+                <button data-href="<?php echo esc_html($hero_button['url']) ?>" class="hero__info__btn">
+                    <?php echo esc_html($hero_button['text']) ?>
+                </button>
+            <?php endif; ?>
         </div>
-        <div class="hero__slider">
-            <div class="hero__slider__container">
-
-                <img class="swiper-slide"
-                     src="<?php echo get_template_directory_uri() ?>/src/image/heroSlide1.webp" alt="">
-                <img class="swiper-slide"
-                     src="<?php echo get_template_directory_uri() ?>/src/image/heroSlide2.webp" alt="">
-                <img class="swiper-slide"
-                     src="<?php echo get_template_directory_uri() ?>/src/image/heroSlide3.webp" alt="">
+        <?php if ($hero_slider): ?>
+            <div class="hero__slider">
+                <div class="hero__slider__container">
+                    <?php
+                    foreach ($hero_slider as $image) {
+                        $image = $image['image'];
+                        ?>
+                        <img class="swiper-slide"
+                             src="<?php echo esc_url($image ['url']) ?>"
+                             alt="<?php echo esc_attr($image ['alt']) ?>">
+                    <?php } ?>
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>

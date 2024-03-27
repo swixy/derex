@@ -1,27 +1,28 @@
+<?php
+$certificates_title = get_field('about_certificates_title');
+$certificates_items = get_field('about_certificates_items');
+?>
+
 <section class="certificates">
     <div class="container">
-        <h2 class="certificates__title">
-           Certificates
-        </h2>
-        <div class="certificates__items">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <img src="<?php echo get_template_directory_uri() ?>/src/image/certificates.webp" alt=""
-                 class="certificates__items__img swiper-slide">
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
+        <?php if ($certificates_title): ?>
+            <h2 class="certificates__title">
+                <?php echo esc_html($certificates_title) ?>
+            </h2>
+        <?php endif; ?>
+        <?php if ($certificates_items): ?>
+            <div class="certificates__items">
+                <?php
+                foreach ($certificates_items as $item) {
+                    $image = $item['image'];
+                    ?>
+                    <img src="<?php echo esc_url($image['url']) ?>"
+                         alt="<?php echo esc_attr($image['alt']) ?>"
+                         class="certificates__items__img swiper-slide">
+                <?php } ?>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        <?php endif; ?>
     </div>
 </section>

@@ -65,8 +65,8 @@
   }
 
   &__items {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     @include respond-from('medium') {
       gap: vw-medium(21px);
     }
