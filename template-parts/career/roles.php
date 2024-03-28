@@ -1,163 +1,44 @@
+<?php
+$roles_title = get_field('carrer_roles_title');
+$roles_text = get_field('carrer_roles_text');
+$roles_items = get_field('carrer_roles_items');
+?>
 <section class="roles">
     <div class="container">
-        <h2 class="roles__title">
-            Our current open roles
-        </h2>
-        <p class="roles__text">
-            Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac
-            dolor placerat tincidunt.
-        </p>
-        <div class="roles__items">
-            <div class="roles__item">
-                <h3 class="roles__item__title">
-                    Engineer, Latvia
-                </h3>
-                <div class="roles__item__content">
-                    <p class="roles__item__text">
-                        Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu
-                        lectus ac dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et
-                        ultrices posuere cubilia curae; Sed sed justo ac diam malesuada sollicitudin. Donec dapibus
-                        velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac
-                        dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                        posuere cubilia curae; Sed sed justo ac diam malesuada sollicitudin.
-                    </p>
-                    <h4 class="roles__item__subtitle">
-                        Key Responsibilities
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                        <li>Sed sed justo ac diam malesuada sollicitudin. Donec dapibus velit ac augue bibendum
-                            laoreet.
-                        </li>
-                        <li>Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac dolor placerat tincidunt.</li>
-
-                    </ul>
-                    <h4 class="roles__item__subtitle">
-                        Qualifications
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                    </ul>
-                    <h4 class="roles__item__subtitle">
-                        Qualifications
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                    </ul>
-                    <button class="roles__item__btn">
-                        Apply here
-                    </button>
-                </div>
+        <?php if ($roles_title): ?>
+            <h2 class="roles__title">
+                <?php echo esc_html($roles_title) ?>
+            </h2>
+        <?php endif; ?>
+        <?php if ($roles_text): ?>
+            <p class="roles__text">
+                <?php echo esc_html($roles_text) ?>
+            </p>
+        <?php endif; ?>
+        <?php if ($roles_items): ?>
+            <div class="roles__items">
+                <?php
+                foreach ($roles_items as $item) {
+                    $title = $item['roles_name'];
+                    $description = $item['description'];
+                    ?>
+                    <div class="roles__item">
+                        <?php if ($title): ?>
+                            <h3 class="roles__item__title">
+                                <?php echo esc_html($title) ?>
+                            </h3>
+                        <?php endif; ?>
+                        <div class="roles__item__content">
+                            <?php if ($description): ?>
+                                <?php echo wp_kses_post($description) ?>
+                            <?php endif; ?>
+                            <button class="roles__item__btn">
+                                Apply here
+                            </button>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
-            <div class="roles__item">
-                <h3 class="roles__item__title">
-                    Construction Project Manager, Germany
-                </h3>
-                <div class="roles__item__content">
-                    <p class="roles__item__text">
-                        Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu
-                        lectus ac dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et
-                        ultrices posuere cubilia curae; Sed sed justo ac diam malesuada sollicitudin. Donec dapibus
-                        velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac
-                        dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                        posuere cubilia curae; Sed sed justo ac diam malesuada sollicitudin.
-                    </p>
-                    <h4 class="roles__item__subtitle">
-                        Key Responsibilities
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                        <li>Sed sed justo ac diam malesuada sollicitudin. Donec dapibus velit ac augue bibendum
-                            laoreet.
-                        </li>
-                        <li>Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac dolor placerat tincidunt.</li>
-
-                    </ul>
-                    <h4 class="roles__item__subtitle">
-                        Qualifications
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                    </ul>
-                    <h4 class="roles__item__subtitle">
-                        Qualifications
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                    </ul>
-                    <button class="roles__item__btn">
-                        Apply here
-                    </button>
-                </div>
-            </div>
-            <div class="roles__item">
-                <h3 class="roles__item__title">
-                    Engineer, Germany
-                </h3>
-                <div class="roles__item__content">
-                    <p class="roles__item__text">
-                        Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu
-                        lectus ac dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et
-                        ultrices posuere cubilia curae; Sed sed justo ac diam malesuada sollicitudin. Donec dapibus
-                        velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac
-                        dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                        posuere cubilia curae; Sed sed justo ac diam malesuada sollicitudin.
-                    </p>
-                    <h4 class="roles__item__subtitle">
-                        Key Responsibilities
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                        <li>Sed sed justo ac diam malesuada sollicitudin. Donec dapibus velit ac augue bibendum
-                            laoreet.
-                        </li>
-                        <li>Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac dolor placerat tincidunt.</li>
-
-                    </ul>
-                    <h4 class="roles__item__subtitle">
-                        Qualifications
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                    </ul>
-                    <h4 class="roles__item__subtitle">
-                        Qualifications
-                    </h4>
-                    <ul class="roles__item__list">
-                        <li>Donec dapibus velit ac augue bibendum laoreet.</li>
-                        <li>Sed ac dolor non nulla lacinia bibendum.</li>
-                        <li>Morbi eu lectus ac dolor placerat tincidunt.</li>
-                        <li>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</li>
-                    </ul>
-                    <button class="roles__item__btn">
-                        Apply here
-                    </button>
-                </div>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>

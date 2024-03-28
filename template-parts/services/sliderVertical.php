@@ -1,70 +1,63 @@
+<?php
+$title = get_sub_field('title');
+$content = get_sub_field('content');
+?>
 <section class="sliderVertical">
     <div class="container">
-        <h2 class="sliderVertical__title">
-            Solar energy solutions
-        </h2>
+        <?php if ($title): ?>
+            <h2 class="sliderVertical__title">
+                <?php echo wp_kses_post($title) ?>
+            </h2>
+        <?php endif; ?>
         <div class="sliderVertical__container">
             <div class="sliderVertical__lists">
-                <p class="sliderVertical__lists__item swiper-slide">
-                    Customized installation options
-                </p>
-                <p class="sliderVertical__lists__item swiper-slide">
-                    The value for multiple industries
-                </p>
-                <p class="sliderVertical__lists__item swiper-slide">
-                    Sustainability revolves around thinking
-                </p>
+                <?php
+                foreach ($content as $item) {
+                    $name = $item['name_slide'];
+                    ?>
+                    <?php if ($name): ?>
+                        <p class="sliderVertical__lists__item swiper-slide">
+                            <?php echo esc_html($name); ?>
+                        </p>
+                    <?php endif; ?>
+                <?php } ?>
+
             </div>
             <div class="sliderVertical__content">
-                <div class="sliderVertical__content__item swiper-slide">
-                    <p class="sliderVertical__content__text">We provide solar panel installation in virtually any
-                        geographical setting. The conventional options include ground mounted and rooftop installations.
-                        In cases where placing panels on stable surfaces is not feasible, we offer a exceptionally
-                        efficient solutions:
-                    </p>
-                    <div class="sliderVertical__content__lists">
-                        <p class="sliderVertical__content__list">
-                            Land
-                        </p>
-                        <p class="sliderVertical__content__list">
-                            Water
-                        </p>
-                        <p class="sliderVertical__content__list">
-                            Roof
-                        </p>
-                        <p class="sliderVertical__content__list">
-                            IPV facade
-                        </p>
+                <?php
+                foreach ($content as $item) {
+                    $type_content = $item['type_content']; ?>
+                    <div class="sliderVertical__content__item swiper-slide">
+                        <?php foreach ($type_content as $item) {
+                            if ($item['acf_fc_layout'] === 'title') {
+                                ?>
+                                <h5 class="sliderVertical__content__title">
+                                    <?php echo $item['title']; ?>
+                                </h5>
+
+                            <?php } elseif ($item['acf_fc_layout'] === 'list') {
+                                ?>
+                                <div class="sliderVertical__content__lists">
+                                    <?php
+                                    foreach ($item['list'] as $items) {
+                                        ?>
+                                        <p class="sliderVertical__content__list">
+                                            <?php echo $items['item']; ?>
+                                        </p>
+                                    <?php } ?>
+                                </div>
+
+                            <?php } elseif ($item['acf_fc_layout'] === 'text') { ?>
+                                <p class="sliderVertical__content__text">
+                                    <?php echo $item['text']; ?>
+                                </p>
+                            <?php }
+                        } ?>
+
                     </div>
-                </div>
-                <div class="sliderVertical__content__item swiper-slide">
-                    <h5 class="sliderVertical__content__title">
-                        Transportation and Logistics
-                    </h5>
-                    <p class="sliderVertical__content__text">
-                        Enables smoother supply chains and reduced costs and EV integration, reducing fossil fuel
-                        dependence and carbon emissions.
-                    </p>
-                    <h5 class="sliderVertical__content__title">
-                        Energy, Technology, and Communication
-                    </h5>
-                    <p class="sliderVertical__content__text">
-                        Integration of renewable energy sources and reduced reliance on non-renewable fuels.
-                    </p>
-                    <h5 class="sliderVertical__content__title">
-                        Environmental and Sustainability
-                    </h5>
-                    <p class="sliderVertical__content__text">
-                        Reduction in carbon emissions
-                    </p>
-                </div>
-                <div class="sliderVertical__content__item swiper-slide">
-                    <p class="sliderVertical__content__text">
-                        We provide solar panel installation in virtually any geographical setting. The conventional
-                        options include ground mounted and rooftop installations. In cases where placing panels on
-                        stable surfaces is not feasible, we offer a exceptionally efficient solutions:
-                    </p>
-                </div>
+                <?php }
+                ?>
+
             </div>
         </div>
     </div>

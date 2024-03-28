@@ -1,18 +1,33 @@
+<?php
+$career_image = get_field('carrer_hero_image');
+$career_hero = get_field('carrer_hero_info');
+$title = $career_hero['title'];
+$text = $career_hero['text'];
+$button = $career_hero['button'];
+?>
 <section class="hero">
     <div class="container">
         <div class="hero__info">
+            <?php if ($title): ?>
             <h1 class="hero__info__title">
-                Career
+                <?php echo esc_html($title) ?>
             </h1>
+            <?php endif; ?>
+            <?php if ($text): ?>
             <p class="hero__info__text">
-                Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus
-                ac dolor placerat tincidunt. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                cubilia curae.
+                <?php echo esc_html($text) ?>
             </p>
+            <?php endif; ?>
+            <?php if ($button): ?>
             <button class="hero__info__btn">
-                View open roles
+                <?php echo esc_html($button) ?>
             </button>
+            <?php endif; ?>
         </div>
-        <img src="<?php echo get_template_directory_uri() ?>/src/image/heroCareer.webp" alt="" class="hero__image">
+        <?php if ($career_image): ?>
+            <img src="<?php echo esc_url($career_image['url']) ?>"
+                 alt="<?php echo esc_attr($career_image['alt']) ?>"
+                 class="hero__image">
+        <?php endif; ?>
     </div>
 </section>

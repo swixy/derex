@@ -1,18 +1,33 @@
+<?php
+$image = get_sub_field('image');
+$info_hero = get_sub_field('services_hero_info');
+$title = $info_hero['title'];
+$text = $info_hero['text'];
+$button_text = $info_hero['button_text'];
+?>
 <section class="hero">
     <div class="container">
         <div class="hero__info">
-            <h1 class="hero__info__title">
-                Solar energy <br>
-                solutions
-            </h1>
-            <p class="hero__info__text">
-                Lorem ipsum dolor sit amet consectetur. Nulla lorem pharetra enim nec. Diam dignissim quam vulputate sed
-                enim.
-            </p>
-            <button class="hero__info__btn">
-                Get consulted
-            </button>
+            <?php if ($title): ?>
+                <h1 class="hero__info__title">
+                    <?php echo wp_kses_post($title) ?>
+                </h1>
+            <?php endif; ?>
+            <?php if ($text): ?>
+                <p class="hero__info__text">
+                    <?php echo esc_html($text) ?>
+                </p>
+            <?php endif; ?>
+            <?php if ($button_text): ?>
+                <button class="hero__info__btn">
+                    <?php echo esc_html($button_text) ?>
+                </button>
+            <?php endif; ?>
         </div>
-        <img src="<?php echo get_template_directory_uri() ?>/src/image/heroServices.webp" alt="" class="hero__image">
+        <?php if ($image): ?>
+        <img src="<?php echo esc_url($image['url']) ?>"
+             alt="<?php echo esc_attr($image['alt']) ?>"
+             class="hero__image">
+        <?php endif; ?>
     </div>
 </section>
