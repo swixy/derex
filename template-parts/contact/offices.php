@@ -17,7 +17,7 @@
             <h2 class="h2">
                 Our offices
             </h2>
-            <p class="offices__text text--default">
+            <p class="offices__text text--large">
                 Lorem ipsum dolor sit amet consectetur. Nulla lorem pharetra enim nec. Diam dignissim quam vulputate sed
                 enim.
             </p>

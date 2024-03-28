@@ -97,4 +97,26 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
+    const sliderSingleProject = new Swiper(".project__slider", {
+        slidesPerView: 1,
+        createElements: true,
+        centeredSlides: true,
+        loop: true,
+        spaceBetween: 24,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: '.swiper-pagination',
+        },
+        breakpoints: {
+            641: {
+              slidesPerView: 2
+            },
+            1024: {
+              slidesPerView: 3
+            }
+          }
+    });
 });

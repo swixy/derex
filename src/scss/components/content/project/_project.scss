@@ -1,14 +1,175 @@
 .project {
     color: $black;
+    padding-bottom: 0;
 
     &__title {
         margin-bottom: 6px;
     }
+
     &__poster {
         margin-bottom: 72px;
 
         @include respond-from('large') {
             margin-bottom: vw-large(72px);
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+
+        margin-bottom: 72px;
+
+        @include respond-from('large') {
+            margin-bottom: vw-large(72px);
+        }
+
+        @include respond-from('medium') {
+            margin-bottom: vw-medium(60px);
+        }
+
+        @include respond-from('small') {
+            margin-bottom: vw-small(40px);
+        }
+    }
+
+    &__col {
+        &-8 {
+            width: 66.66667%;
+        }
+
+        &-4 {
+            width: 33.33334%;
+        }
+
+        &:first-child {
+            padding-right: 100px;
+
+            @include respond-from('large') {
+                padding-right: vw-large(100px);
+            }
+
+            @include respond-from('medium') {
+                padding-right: vw-medium(60px);
+            }
+
+            @include respond-from('small') {
+                padding-right: 0;
+                padding-bottom: vw-small(40px);
+            }
+        }
+
+        @include respond-from('small') {
+            width: 100% !important;
+        }
+    }
+
+    &__text {
+        color: $dark-grey;
+    }
+
+    &__gallery {
+        position: relative;
+        .swiper-button {
+            &-prev:after {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M31.666 20H9.99935' stroke='%23585858' stroke-width='2' stroke-linecap='square'/%3E%3Cpath d='M20 8.33203L8.33333 19.9987L20 31.6654' stroke='%23585858' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+            }
+            &-next:after {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40' fill='none'%3E%3Cpath d='M8.33398 20H30.0007' stroke='%23585858' stroke-width='2' stroke-linecap='square'/%3E%3Cpath d='M20 8.33203L31.6667 19.9987L20 31.6654' stroke='%23585858' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+            }   
+        }
+
+        margin-bottom: 172px;
+        @include respond-from('large') {
+            margin-bottom: vw-large(172px);
+        }
+
+        @include respond-from('medium') {
+            margin-bottom: vw-medium(100px);
+        }
+
+        @include respond-from('small') {
+            margin-bottom: vw-small(60px);
+        }
+    }
+
+    &__slider {
+        overflow: hidden;
+
+        &-wrapper {
+            padding: 40px 97px 0 97px;
+
+            @include respond-from('large') {
+                padding: vw-large(40px) vw-large(97px) 0 vw-large(97px);
+            }
+
+            @include respond-from('medium') {
+                padding: vw-medium(40px) vw-medium(60px) 0 vw-medium(60px);
+            }
+
+            @include respond-from('small') {
+                padding: vw-small(40px) vw-small(40px) 0 vw-small(40px);
+            }
+
+            &+.swiper-pagination-bullets {
+                &.swiper-pagination-horizontal {
+                    margin-top: 40px;
+                    bottom: unset;
+
+                    @include respond-from('large') {
+                        margin-top: vw-medium(40px);
+                    }
+
+                    @include respond-from('medium') {
+                        margin-top: vw-medium(20px);
+                    }
+
+                    @include respond-from('small') {
+                        margin-top: vw-medium(20px);
+                    }
+                }
+                .swiper-pagination-bullet {
+                    border-radius: 0;
+                    width: 12px;
+                    height: 12px;
+
+                    &-active {
+                        background: $orange;
+                    }
+                }
+            }
+        }
+    }
+
+    &__contact {
+        padding: 112px 0;
+        background-color: $light-grey;
+        .project__col {
+            &:first-child {
+                padding-right: 40px;
+    
+                @include respond-from('large') {
+                    padding-right: vw-large(40px);
+                }
+    
+                @include respond-from('medium') {
+                    padding-right: vw-medium(20px);
+                }
+    
+                @include respond-from('small') {
+                    padding-right: 0;
+                    padding-bottom: vw-small(40px);
+                }
+            }
+        }
+
+        textarea {
+            width: 100%;
+        }
+        textarea, input {
+            background-color: transparent;
+            border: 1px solid $grey;
+            padding: 12px 16px;
         }
     }
 }
