@@ -6361,6 +6361,21 @@ button {
   margin-bottom: 4px;
 }
 
+.project {
+  color: rgb(48, 48, 51);
+}
+.project__title {
+  margin-bottom: 6px;
+}
+.project__poster {
+  margin-bottom: 72px;
+}
+@media (max-width: 1439px) {
+  .project__poster {
+    margin-bottom: 5vw;
+  }
+}
+
 /*--------------------------------------------------------------
 # Plugins
 --------------------------------------------------------------*/

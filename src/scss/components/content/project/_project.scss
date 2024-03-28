@@ -1,0 +1,14 @@
+.project {
+    color: $black;
+
+    &__title {
+        margin-bottom: 6px;
+    }
+    &__poster {
+        margin-bottom: 72px;
+
+        @include respond-from('large') {
+            margin-bottom: vw-large(72px);
+        }
+    }
+}
