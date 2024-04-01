@@ -77,6 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 10,
         createElements: true,
         direction: "vertical",
+        // autoHeight: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
         thumbs: {
             swiper: sliderVerticalLists,
         },

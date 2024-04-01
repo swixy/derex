@@ -1,5 +1,6 @@
 <?php
 $title = get_sub_field('title');
+$text = get_sub_field('text');
 $content = get_sub_field('content');
 ?>
 <section class="sliderVertical">
@@ -8,6 +9,11 @@ $content = get_sub_field('content');
             <h2 class="sliderVertical__title">
                 <?php echo wp_kses_post($title) ?>
             </h2>
+        <?php endif; ?>
+        <?php if ($text): ?>
+            <p class="sliderVertical__text">
+                <?php echo wp_kses_post($text) ?>
+            </p>
         <?php endif; ?>
         <div class="sliderVertical__container">
             <div class="sliderVertical__lists">
@@ -48,9 +54,9 @@ $content = get_sub_field('content');
                                 </div>
 
                             <?php } elseif ($item['acf_fc_layout'] === 'text') { ?>
-                                <p class="sliderVertical__content__text">
-                                    <?php echo $item['text']; ?>
-                                </p>
+                                <div class="sliderVertical__content__text">
+                                    <?php echo wp_kses_post($item['text']) ?>
+                                </div>
                             <?php }
                         } ?>
 

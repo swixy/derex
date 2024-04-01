@@ -1,31 +1,46 @@
+<?php
+$title = get_sub_field('title');
+$text = get_sub_field('text');
+$content = get_sub_field('Info');
+$image = $content['image'];
+$info = $content['info'];
+?>
 <section class="imageHalf">
     <div class="container">
-        <img src="<?php echo get_template_directory_uri() ?>/src/image/heroHalf.webp" alt="" class="imageHalf__img">
+        <?php if ($image): ?>
+            <img src="<?php echo esc_url($image['url']) ?>"
+                 alt="<?php echo esc_attr('alt') ?>"
+                 class="imageHalf__img">
+        <?php endif; ?>
         <div class="imageHalf__info">
-            <h3 class="imageHalf__info__title">
-                The method in detail
-            </h3>
-            <p class="imageHalf__info__text">
-                Our method involves a holistic integration of multiple subsystems – from HVAC, electrical, and lighting
-                to plumbing, fire protection, and security systems. By viewing these components as interconnected
-                elements of a single system, our engineers unveil opportunities for significant optimization and energy
-                conservation. This comprehensive strategy enhances overall building performance, transcending mere
-                construction to consider the entire lifecycle of a building.
-            </p>
-            <div class="imageHalf__info__lists">
-                <p class="imageHalf__info__list">
-                    Design and construction solutions for economic benefits
-                </p>
-                <p class="imageHalf__info__list">
-                    Modernizing heritage buildings while maintaining their authenticity
-                </p>
-                <p class="imageHalf__info__list">
-                    Eco-innovative solutions, elevating project sustainability
-                </p>
-                <p class="imageHalf__info__list">
-                    Customized solutions that align with your vision and goals
-                </p>
-            </div>
+            <?php
+            $detail_content = $info['detail_content'];
+            //            var_dump($detail_content);
+            foreach ($detail_content as $item) {
+                if ($item['acf_fc_layout'] === 'title') {
+                    ?>
+                    <h3 class="imageHalf__info__title">
+                        <?php echo $item['title']; ?>
+                    </h3>
+                <?php } elseif ($item['acf_fc_layout'] === 'list') {
+                    ?>
+                    <div class="imageHalf__info__lists">
+                        <?php
+                        foreach ($item['list'] as $items) {
+                            ?>
+                            <p class="imageHalf__info__list">
+                                <?php echo $items['item']; ?>
+                            </p>
+                        <?php } ?>
+
+                    </div>
+                <?php } elseif ($item['acf_fc_layout'] === 'text') { ?>
+                    <p class="imageHalf__info__text">
+                        <?php echo wp_kses_post($item['text']) ?>
+                    </p>
+                <?php }
+            } ?>
+
         </div>
     </div>
 </section>

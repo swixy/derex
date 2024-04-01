@@ -29,6 +29,39 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+
+
+
+
+    setContainerHeight();
+    document.querySelectorAll('.sliderVertical__lists__item').forEach(item => {
+        item.addEventListener('click', () => {
+            setContainerHeight();
+        });
+    });
+    function setContainerHeight() {
+        const activeSlide = document.querySelector('.sliderVertical__content__item.swiper-slide-active');
+        if (activeSlide) {
+            const slideHeight = activeSlide.clientHeight;
+            const container = document.querySelector('.sliderVertical__container');
+            container.style.height = slideHeight + 'px';
+        }
+    }
+
+    // document.querySelectorAll('.sliderVertical__lists__item').forEach(item => {
+    //     item.addEventListener('click', () => {
+    //         const activeSlide = document.querySelector('.sliderVertical__content__item.swiper-slide-active');
+    //         if (activeSlide) {
+    //             const slideHeight = activeSlide.clientHeight;
+    //             console.log(slideHeight);
+    //             const container = document.querySelector('.sliderVertical__container');
+    //             container.style.height = slideHeight + 'px';
+    //         }
+    //     });
+    // });
+
+
+
     // function switchTab(tabIndex) {
     //     const tabItems = document.querySelectorAll('.tabs__item');
     //     const tabContent = document.querySelectorAll('.tabs__content');

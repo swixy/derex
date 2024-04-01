@@ -1,74 +1,41 @@
+<?php
+$title = get_sub_field('title');
+$advantages = get_sub_field('items');
+?>
 <section class="advantages">
     <div class="container">
-        <h2 class="advantages__title">
-            Advantages
-        </h2>
-        <div class="advantages__items">
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages1.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Commercial Buildings
-                </h3>
-                <p class="advantages__item__text">
-                    Optimizes energy usage, enhances occupant comfort, and reduces costs.
-                </p>
+        <?php if ($title): ?>
+            <h2 class="advantages__title">
+                <?php echo esc_html($title) ?>
+            </h2>
+        <?php endif; ?>
+        <?php if ($advantages): ?>
+            <div class="advantages__items">
+                <?php
+                foreach ($advantages as $item) {
+                    $icon = $item['icon'];
+                    $title = $item['title'];
+                    $text = $item['text'];
+                    ?>
+                    <div class="advantages__item">
+                        <?php if ($icon): ?>
+                            <img src="<?php echo esc_url($icon['url'])?>"
+                                 alt="<?php echo esc_attr($icon['alt'])?>"
+                                 class="advantages__item__icon">
+                        <?php endif; ?>
+                        <?php if ($title): ?>
+                            <h3 class="advantages__item__title">
+                                <?php echo esc_html($title) ?>
+                            </h3>
+                        <?php endif; ?>
+                        <?php if ($text): ?>
+                            <p class="advantages__item__text">
+                                <?php echo esc_html( $text) ?>
+                            </p>
+                        <?php endif; ?>
+                    </div>
+                <?php } ?>
             </div>
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages7.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Healthcare Facilities
-                </h3>
-                <p class="advantages__item__text">
-                    Ensures infection control, safety, and reliable operation of critical systems.
-                </p>
-            </div>
-
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages3.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Educational Institutions
-                </h3>
-                <p class="advantages__item__text">
-                    Creates comfortable learning environments and aligns with sustainability goals.
-                </p>
-            </div>
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages4.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Hospitality and Entertainment
-                </h3>
-                <p class="advantages__item__text">
-                    Enhances guest experiences and operational efficiency.
-                </p>
-            </div>
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages5.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Industrial
-                    Facilities
-                </h3>
-                <p class="advantages__item__text">
-                    Optimizes processes, improves worker safety, and manages energy consumption.
-                </p>
-            </div>
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages6.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Retail and Commercial Spaces
-                </h3>
-                <p class="advantages__item__text">
-                    Improves energy efficiency and enhances the shopping experience.
-                </p>
-            </div>
-            <div class="advantages__item">
-                <img src="<?php echo get_template_directory_uri() ?>/src/image/advantages2.webp" alt="" class="advantages__item__icon">
-                <h3 class="advantages__item__title">
-                    Data Centers
-                </h3>
-                <p class="advantages__item__text">
-                    Provides reliable cooling, power backup, and fire suppression systems.
-                </p>
-            </div>
-        </div>
+        <?php endif; ?>
     </div>
 </section>

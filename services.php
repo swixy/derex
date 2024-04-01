@@ -15,6 +15,12 @@ get_header();
                     get_template_part('template-parts/services/sliderVertical');
                 elseif (get_row_layout() == 'tabs'):
                     get_template_part('template-parts/services/tabs');
+                elseif (get_row_layout() == 'projects'):
+                    get_template_part('template-parts/services/projects');
+                elseif (get_row_layout() == 'detail'):
+                    get_template_part('template-parts/services/imageHalf');
+                elseif (get_row_layout() == 'advantages'):
+                    get_template_part('template-parts/services/advantages');
                 endif;
             endwhile;
         else :
@@ -23,9 +29,9 @@ get_header();
 
 
         <!--        --><?php //get_template_part('template-parts/services/tabs') ?>
-        <?php get_template_part('template-parts/services/advantages') ?>
-        <?php get_template_part('template-parts/services/imageHalf') ?>
-        <?php get_template_part('template-parts/home/projects') ?>
+<!--        --><?php //get_template_part('template-parts/services/advantages') ?>
+<!--        --><?php //get_template_part('template-parts/services/imageHalf') ?>
+<!--        --><?php //get_template_part('template-parts/home/projects') ?>
     </div>
 <?php
 get_footer();
