@@ -1,0 +1,124 @@
+.news-single {
+    &__row {
+        max-width: 946px;
+        margin: 56px auto 72px auto;
+    }
+    &__content {
+      p {
+          margin-bottom: 24px;
+      }
+      img {
+          margin: 8px 0 32px 0;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+          &:not(:first-child) {
+              margin: 64px 0 24px 0;
+          }
+      }
+      h3 {
+        color: $black;
+        font-size: 32px;
+        line-height: 37px;
+        font-weight: 700;
+        @include respond-from('large') {
+          font-size: vw-large(32px);
+          line-height: vw-large(37px);
+        }
+        @include respond-from('medium') {
+          font-size: vw-medium(32px);
+          line-height: vw-medium(38px);
+        }
+        @include respond-from('small') {
+          font-size: vw-small(32px);
+          line-height: vw-small(38px);
+        }
+      }
+    }
+    &__related {
+      padding: 100px 0 120px 0;
+      border-top: 1px solid $grey-lighter;
+    }
+    &__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 25px;
+
+      margin-bottom: 56px;
+      @include respond-from('large') {
+        margin-bottom: vw-large(56px);
+      }
+      @include respond-from('medium') {
+        margin-bottom: vw-medium(56px);
+      }
+      @include respond-from('small') {
+        margin-bottom: vw-small(56px);
+      }
+    }
+    &__link {
+      color: $black;
+      font-size: 20px;
+      line-height: 38px;
+      font-weight: 600;
+      text-decoration: underline;
+      position: relative;
+      @include respond-from('large') {
+        font-size: vw-large(20px);
+        line-height: vw-large(38px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(20px);
+        line-height: vw-medium(32px);
+      }
+      @include respond-from('small') {
+        display: none;
+        //font-size: vw-small(20px);
+        //line-height: vw-small(32px);
+      }
+      &:hover {
+        &:after {
+          right: -35px;
+          @include respond-from('large') {
+            right: vw-large(-35px);
+          }
+          @include respond-from('medium') {
+            right: vw-medium(-35px);
+          }
+          @include respond-from('small') {
+            right: vw-small(-35px);
+          }
+        }
+      }
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 20px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1 11H13.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M9 5.75L14.25 11L9 16.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
+        background-size: cover;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .2s ease-in-out;
+        @include respond-from('large') {
+          width: vw-large(18px);
+          height: vw-large(20px);
+          right: vw-large(-25px);
+        }
+        @include respond-from('medium') {
+          width: vw-medium(18px);
+          height: vw-medium(20px);
+          right: vw-medium(-25px);
+        }
+        @include respond-from('small') {
+          width: vw-small(18px);
+          height: vw-small(20px);
+          right: vw-small(-25px);
+        }
+      }
+    }
+}

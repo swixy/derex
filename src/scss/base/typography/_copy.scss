@@ -38,9 +38,9 @@ address {
 		  margin-bottom: vw-medium(48px);
 		}
 		@include respond-from('small') {
-		  font-size: vw-small(20px);
-		  line-height: vw-small(28px);
-		  margin-bottom: vw-small(40px);
+		  font-size: 18px;
+		  line-height: 28px;
+		  margin-bottom: 40px;
 		}
 
 		&:has(p:only-child) {

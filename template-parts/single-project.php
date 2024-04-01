@@ -82,6 +82,7 @@
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
+    </div>
 </section>
 
 <section class="project__contact">

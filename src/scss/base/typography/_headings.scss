@@ -7,28 +7,44 @@ h6 {
 	margin: 0;
 	font-family: $font__title;
 }
-h1{
-
-}
 .h2 {
-    color: $black;
-    font-size: 40px;
-    line-height: 46px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    @include respond-from('large') {
-      font-size: vw-large(40px);
-      line-height: vw-large(46px);
-      margin-bottom: vw-large(16px);
-    }
-    @include respond-from('medium') {
-      font-size: vw-medium(32px);
-      line-height: vw-medium(38px);
-      margin-bottom: vw-medium(16px);
-    }
-    @include respond-from('small') {
-      font-size: vw-small(32px);
-      line-height: vw-small(38px);
-      margin-bottom: vw-small(16px);
-    }
+  color: $black;
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  @include respond-from('large') {
+    font-size: vw-large(40px);
+    line-height: vw-large(46px);
+    margin-bottom: vw-large(16px);
   }
+  @include respond-from('medium') {
+    font-size: vw-medium(32px);
+    line-height: vw-medium(38px);
+    margin-bottom: vw-medium(16px);
+  }
+  @include respond-from('small') {
+    font-size: vw-small(32px);
+    line-height: vw-small(38px);
+    margin-bottom: vw-small(16px);
+  }
+}
+h3,
+.h3 {
+  color: $black;
+  font-size: 32px;
+  line-height: 37px;
+  font-weight: 700;
+  @include respond-from('large') {
+    font-size: vw-large(32px);
+    line-height: vw-large(37px);
+  }
+  @include respond-from('medium') {
+    font-size: vw-medium(32px);
+    line-height: vw-medium(38px);
+  }
+  @include respond-from('small') {
+    font-size: vw-small(32px);
+    line-height: vw-small(38px);
+  }
+}
