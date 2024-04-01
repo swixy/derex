@@ -21,11 +21,6 @@
         margin-bottom: 4px;
         font-size: 14px;
         line-height: 19.6px;
-        @include respond-from('large') {
-            font-size: vw-large(14px);
-            line-height: vw-large(19.6px);
-            margin-bottom: vw-large(4px);
-          }
     }
 
     &__description {
