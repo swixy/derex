@@ -29,5 +29,13 @@
             grid-template-columns: repeat(1, 1fr);
             gap: vw-small(56px) vw-small(27px);
         }
+        .card__thumb{
+            height: auto;
+        }
+    }
+}
+select.news{
+    .card__thumb{
+        height: auto;
     }
 }

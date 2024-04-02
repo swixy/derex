@@ -28,17 +28,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
-
-
-
-
     setContainerHeight();
     document.querySelectorAll('.sliderVertical__lists__item').forEach(item => {
         item.addEventListener('click', () => {
             setContainerHeight();
         });
     });
+
     function setContainerHeight() {
         const activeSlide = document.querySelector('.sliderVertical__content__item.swiper-slide-active');
         if (activeSlide) {
@@ -59,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //         }
     //     });
     // });
-
 
 
     // function switchTab(tabIndex) {
@@ -110,17 +105,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const indicator = document.querySelector('.tabs__indicator');
     const activeTab = document.querySelector('.tabs__item.active');
-    indicator.style.width = activeTab.offsetWidth + 'px';
-    indicator.style.left = activeTab.offsetLeft + 'px';
+    if (indicator) {
+        indicator.style.width = activeTab.offsetWidth + 'px';
+        indicator.style.left = activeTab.offsetLeft + 'px';
 
-    tabItems.forEach((tab, index) => {
-        tab.addEventListener('click', () => {
-            tabItems.forEach((t) => t.classList.remove('active'));
-            tab.classList.add('active');
-            indicator.style.width = tab.offsetWidth + 'px';
-            indicator.style.left = tab.offsetLeft + 'px';
+        tabItems.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabItems.forEach((t) => t.classList.remove('active'));
+                tab.classList.add('active');
+                indicator.style.width = tab.offsetWidth + 'px';
+                indicator.style.left = tab.offsetLeft + 'px';
+            });
         });
-    });
+    }
 
     const sliderItems = document.querySelectorAll('.step__slider__item');
 
@@ -138,6 +135,107 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+
+    const buttonsCat = document.querySelectorAll('.filter__items-cat .filter__item');
+    if (buttonsCat) {
+        buttonsCat.forEach(function (button) {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Show loader
+                const loader = document.querySelector('.preloader__wrapper');
+                loader.style.display = 'flex';
+
+                // Hide projects grid
+                const projectsGrid = document.querySelector('.projects__grid');
+                projectsGrid.style.display = 'none';
+                const projectsGridFirst = document.querySelector('.projects__grid--first');
+                projectsGridFirst.style.display = 'none';
+
+
+                buttonsCat.forEach(function (btn) {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                const term = this.getAttribute('data-term');
+
+                new Promise((resolve) => {
+                    setTimeout(resolve, 400);
+                }).then(() => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/wp-admin/admin-ajax.php');
+
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            document.querySelector('.projects .container .projects__grid').innerHTML = xhr.responseText;
+                            // Hide loader after content is loaded
+                            loader.style.display = 'none';
+                            projectsGrid.style.display = 'grid';
+
+                        }
+                    };
+                    xhr.onerror = function () {
+                        // Error handling code
+                    };
+
+                    xhr.send('action=sort_posts_by_taxonomy&term=' + term);
+                    console.log(term, xhr);
+                });
+            });
+        });
+    }
+    const buttonsYears = document.querySelectorAll('.filter__items-years .filter__item');
+    if (buttonsYears) {
+        buttonsYears.forEach(function (button) {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                // Show loader
+                const loader = document.querySelector('.preloader__wrapper');
+                loader.style.display = 'flex';
+
+                // Hide projects grid
+                const newsGrid = document.querySelector('.news__grid');
+                newsGrid.style.display = 'none';
+                const newsRow = document.querySelector('.news__row');
+                newsRow.style.display = 'none';
+
+
+                buttonsYears.forEach(function (btn) {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                const term = this.getAttribute('data-term');
+
+                new Promise((resolve) => {
+                    setTimeout(resolve, 400);
+                }).then(() => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', '/wp-admin/admin-ajax.php');
+
+                    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+                    xhr.onload = function () {
+                        if (xhr.status === 200) {
+                            document.querySelector('.news .container .news__grid').innerHTML = xhr.responseText;
+                            // Hide loader after content is loaded
+                            loader.style.display = 'none';
+                            newsGrid.style.display = 'grid';
+
+                        }
+                    };
+                    xhr.onerror = function () {
+                        console.log('onerror')
+                        // Error handling code
+                    };
+
+                    xhr.send('action=sort_posts_by_years&term=' + term);
+                    console.log(term, xhr);
+                });
+            });
+        });
+    }
 
 
 });

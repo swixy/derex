@@ -15,10 +15,10 @@
 
 <section class="filter">
     <div class="container">
-        <div class="filter__items">
+        <div class="filter__items filter__items-cat">
             <?php
             $terms = get_terms([
-                'post_type' => array('project'),
+                'post_type' => 'project',
                 'taxonomy' => 'category',
                 'hide_empty' => true,
             ]);

@@ -15,12 +15,11 @@
 
 <section class="filter">
     <div class="container">
-        <div class="filter__items">
+        <div class="filter__items filter__items-years">
             <?php
             $terms = get_terms([
-                'post_type' => array('project'),
-                'taxonomy' => 'category',
-                'hide_empty' => true,
+                'taxonomy' => 'year_cat',
+                'hide_empty' => false,
             ]);
             $i = 1;
             foreach ($terms as $term) {

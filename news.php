@@ -14,27 +14,8 @@
 get_header(); ?>
 <div class="news">
     <?php
-    get_template_part(
-        'template-parts/news/head',
-        null, 
-        [
-            'title' => 'News',
-            'description' => 'Lorem ipsum dolor sit amet consectetur. Nulla lorem pharetra enim nec.<br>Diam dignissim quam vulputate sed enim.'
-        ]
-    );
-    get_template_part(
-        'template-parts/common/filter', 
-        null,
-        ['items' => 
-            [
-                '2024' => '2024',
-                '2023' => '2023',
-                '2022' => '2022',
-                '2021' => '2021',
-                '2020' => '2020',
-            ]
-        ]
-    );
+    get_template_part('template-parts/news/head');
+    get_template_part('template-parts/news/filter');
     get_template_part('template-parts/news/news');
     ?>
 </div>

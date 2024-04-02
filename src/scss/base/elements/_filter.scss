@@ -15,7 +15,7 @@
         border: none;
         text-decoration: underline;
         font-weight: 400;
-
+        transition: all .3s ease-in-out;
         &:hover, &.active {
             color: $orange;
             font-weight: 700;

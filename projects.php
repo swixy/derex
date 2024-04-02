@@ -14,28 +14,8 @@
 get_header(); ?>
 <div class="news">
     <?php
-    get_template_part(
-        'template-parts/news/head',
-        null, 
-        [
-            'title' => 'Projects',
-            'description' => 'Lorem ipsum dolor sit amet consectetur. Nulla lorem pharetra enim nec.<br>Diam dignissim quam vulputate sed enim.'
-        ]
-    );
-    get_template_part(
-        'template-parts/common/filter',
-        null,
-        [
-            'items' =>
-                [
-                    'all-works' => 'All Works',
-                    'Category1' => 'Category',
-                    'Category2' => 'Category',
-                    'Category3' => 'Category',
-                    'Category4' => 'Category',
-                ]
-        ]
-    );
+    get_template_part('template-parts/projects/head');
+    get_template_part('template-parts/projects/filter');
     get_template_part('template-parts/projects/projects');
     ?>
 </div>

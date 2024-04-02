@@ -11,7 +11,7 @@
  */
 ?>
 
-<div class="preloader__wrapper">
+<div class="preloader__wrapper" style="display: none">
     <div class="preloader">
         <div class="bar1"></div>    
         <div class="bar2"></div>
