@@ -1,6 +1,6 @@
 .hero-contact {
   position: relative;
-  
+
   @include respond-from('large') {
     padding: vw-large(131.5px) 0 vw-large(131.5px) vw-large(485px);
   }

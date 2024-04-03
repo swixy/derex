@@ -652,10 +652,41 @@ table {
 }
 .header__navigator ul a {
   color: rgb(48, 48, 51);
-  font-weight: 500;
+  font-weight: 600;
+}
+.header__navigator ul li {
+  padding: 10px 12px;
+  transition: all 0.2s ease-in-out;
+}
+.header__navigator ul li.menu-item-has-children {
+  padding: 10px 34px 10px 12px;
+  position: relative;
+}
+.header__navigator ul li.menu-item-has-children:hover {
+  background: #F3F3F3;
+}
+.header__navigator ul li.menu-item-has-children:hover:before {
+  transform: translateY(-50%) rotate(180deg);
+}
+.header__navigator ul li.menu-item-has-children:hover .sub-menu {
+  display: block;
+  position: absolute;
+  top: 0;
+}
+.header__navigator ul li.menu-item-has-children:before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none"><path d="M1.71436 5.5L8.89103 12.5L16.3856 5.55185" stroke="%23303033" stroke-width="1.5"/></svg>');
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.2s ease-in-out;
 }
 .header__navigator ul li .sub-menu {
   display: none;
+  padding: 0;
 }
 .header .hamburger-menu {
   display: none;
