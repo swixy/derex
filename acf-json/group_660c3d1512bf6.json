@@ -54,7 +54,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "66",
                 "class": "",
                 "id": ""
             },
@@ -142,14 +142,14 @@
         {
             "key": "field_660c3e15060a5",
             "label": "Title",
-            "name": "title",
+            "name": "contact_offices_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "40",
                 "class": "",
                 "id": ""
             },
@@ -162,9 +162,9 @@
         {
             "key": "field_660c3e1a060a6",
             "label": "Text",
-            "name": "text",
+            "name": "contact_offices_text",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -175,14 +175,14 @@
             },
             "default_value": "",
             "maxlength": "",
+            "rows": 2,
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": "br"
         },
         {
             "key": "field_660c3e23060a7",
             "label": "Offices",
-            "name": "offices",
+            "name": "contact_offices_offices",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -300,7 +300,7 @@
                                             "label": "Address",
                                             "name": "address",
                                             "aria-label": "",
-                                            "type": "text",
+                                            "type": "textarea",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
@@ -311,9 +311,9 @@
                                             },
                                             "default_value": "",
                                             "maxlength": "",
+                                            "rows": 2,
                                             "placeholder": "",
-                                            "prepend": "",
-                                            "append": ""
+                                            "new_lines": "br"
                                         },
                                         {
                                             "key": "field_660c3f02060ae",
@@ -392,7 +392,7 @@
                                     "maxlength": "",
                                     "rows": "",
                                     "placeholder": "",
-                                    "new_lines": ""
+                                    "new_lines": "br"
                                 }
                             ]
                         }
@@ -420,5 +420,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1712078933
+    "modified": 1712154282
 }
