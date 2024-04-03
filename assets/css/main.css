@@ -658,9 +658,24 @@ table {
   padding: 10px 12px;
   transition: all 0.2s ease-in-out;
 }
+.header__navigator ul li a {
+  transition: all 0.2s ease-in-out;
+}
+.header__navigator ul li:hover > a {
+  color: rgb(243, 77, 3);
+}
 .header__navigator ul li.menu-item-has-children {
   padding: 10px 34px 10px 12px;
   position: relative;
+}
+.header__navigator ul li.menu-item-has-children a {
+  pointer-events: none;
+}
+.header__navigator ul li.menu-item-has-children:hover {
+  cursor: pointer;
+}
+.header__navigator ul li.menu-item-has-children:hover > a {
+  color: rgb(48, 48, 51);
 }
 .header__navigator ul li.menu-item-has-children:hover {
   background: #F3F3F3;
@@ -671,7 +686,15 @@ table {
 .header__navigator ul li.menu-item-has-children:hover .sub-menu {
   display: block;
   position: absolute;
-  top: 0;
+  top: 40px;
+  left: 0;
+}
+.header__navigator ul li.menu-item-has-children:hover .sub-menu li a {
+  pointer-events: all;
+  transition: all 0.2s ease-in-out;
+}
+.header__navigator ul li.menu-item-has-children:hover .sub-menu li:hover a {
+  color: rgb(243, 77, 3);
 }
 .header__navigator ul li.menu-item-has-children:before {
   position: absolute;
@@ -686,7 +709,11 @@ table {
 }
 .header__navigator ul li .sub-menu {
   display: none;
-  padding: 0;
+  background: #F3F3F3;
+  min-width: 100%;
+  width: max-content;
+  z-index: 2;
+  padding: 5px 10px 5px 0;
 }
 .header .hamburger-menu {
   display: none;

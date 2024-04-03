@@ -11,11 +11,13 @@
   @include respond-from('small') {
     height: vw-small(56px);
   }
-  &__container{
+
+  &__container {
     display: flex;
     justify-content: space-between;
   }
-  &__logo{
+
+  &__logo {
     width: 142px;
     @include respond-from('large') {
       width: vw-large(142px);
@@ -27,8 +29,9 @@
       width: vw-small(120px);
     }
   }
-  &__navigator{
-    ul{
+
+  &__navigator {
+    ul {
       margin: 0;
       display: flex;
       list-style: none;
@@ -39,28 +42,69 @@
       @include respond-from('medium') {
         display: none;
       }
-      a{
+
+      a {
         color: $black;
         font-weight: 600;
       }
-      li{
+
+      li {
         padding: 10px 12px;
         transition: all .2s ease-in-out;
-        &.menu-item-has-children{
-          padding: 10px 34px 10px 12px;
-          position: relative;
-          &:hover{
-            background: #F3F3F3;
-            &:before{
-              transform: translateY(-50%) rotate(180deg);
-            }
-            .sub-menu{
-              display: block;
-              position: absolute;
-              top: 0;
+
+        a {
+          transition: all .2s ease-in-out;
+        }
+
+        &:hover {
+          &>a {
+            color: $orange;
+          }
+        }
+
+        &.menu-item-has-children {
+          a {
+            pointer-events: none;
+          }
+          &:hover {
+            cursor: pointer;
+            &>a {
+              color: $black;
             }
           }
-          &:before{
+          padding: 10px 34px 10px 12px;
+          position: relative;
+
+          &:hover {
+            background: #F3F3F3;
+
+            &:before {
+              transform: translateY(-50%) rotate(180deg);
+            }
+
+            .sub-menu {
+              display: block;
+              position: absolute;
+              top: 40px;
+              left: 0;
+
+              li {
+
+                a {
+                  pointer-events: all;
+                  transition: all .2s ease-in-out;
+                }
+
+                &:hover {
+                  a {
+                    color: $orange;
+                  }
+                }
+              }
+            }
+          }
+
+          &:before {
             position: absolute;
             content: '';
             width: 18px;
@@ -72,14 +116,21 @@
             transition: all .2s ease-in-out;
           }
         }
-        .sub-menu{
+
+        .sub-menu {
           display: none;
-          padding: 0;
+          background: #F3F3F3;
+          min-width: 100%;
+          width: max-content;
+          z-index: 2;
+          padding: 5px 10px 5px 0;
+
         }
       }
     }
   }
-  .hamburger-menu{
+
+  .hamburger-menu {
     display: none;
   }
 }
