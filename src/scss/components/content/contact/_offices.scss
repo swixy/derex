@@ -13,6 +13,9 @@
     @include respond-from('large') {
       max-width: vw-large(840px);
     }
+    @include respond-from('medium') {
+      max-width: 100%;
+    }
   }
 
   &__items {
@@ -25,8 +28,8 @@
   &__item {
     display: flex;
     padding: 40px 0;
-    @include respond-from('large') {
-
+    @include respond-from('medium') {
+      flex-wrap: wrap;
     }
 
     &:not(:last-child) {
@@ -45,6 +48,15 @@
       margin-right: vw-large(97px);
       width: vw-large(388px);
     }
+    @include respond-from('medium') {
+      width: 100%
+    }
+
+    &-wrapper {
+      @include respond-from('medium') {
+        width: 100%;
+      }
+    }
   }
 
   &__country {
@@ -56,13 +68,20 @@
     width: 172px;
 
     @include respond-from('large') {
-      font-size: vw-large(24px);
-      line-height: vw-large(28px);
-      margin-right: vw-large(24px);
+      margin-right: 24px;
       width: vw-large(172px);
     }
-  }
+    @include respond-from('medium') {
+      width: 100%;
 
+      margin: 12px 0 24px 0;
+    }
+  }
+  &__info {
+    @include respond-from('medium') {
+      width: 100%;
+    }
+  }
   &__info-row {
     flex-grow: 1;
     display: flex;
@@ -75,6 +94,9 @@
     @include respond-from('large') {
       gap: vw-large(24px);
       width: vw-large(461px);
+    }
+    @include respond-from('large') {
+      gap: 24px
     }
   }
 
@@ -100,6 +122,9 @@
     @include respond-from('large') {
       padding-top: vw-large(24px);
     }
+    @include respond-from('medium') {
+      border-top: none;
+    }
   }
 
   &__link {
@@ -111,9 +136,7 @@
     font-size: 16px;
     line-height: 22.4px;
 
-    @include respond-from('large') {
-      font-size: vw-large(16px);
-      line-height: vw-large(22.4px);
+    @include respond-from('medium') {
     }
 
     &:hover {
@@ -132,11 +155,6 @@
 
     font-size: 16px;
     line-height: 22.4px;
-
-    @include respond-from('large') {
-      font-size: vw-large(16px);
-      line-height: vw-large(22.4px);
-    }
 
     &:hover {
       text-decoration: underline;
@@ -190,9 +208,6 @@
     background-color: white;
     display: none;
     overflow: hidden;
-    @include respond-from('large') {
-      padding: vw-large(16px) 0;
-    }
 
     p {
       line-height: 22.4px;
