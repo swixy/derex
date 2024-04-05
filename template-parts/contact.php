@@ -1,15 +1,12 @@
-
-
 <section class="contact">
     <div class="container">
         <div class="contact__container">
             <div class="contact__info">
                 <h2 class="contact__info__title">
-                    Connect with us
+                    <?php echo $args['title'] ?: 'Connect with us'; ?>
                 </h2>
                 <p class="contact__info__text">
-                    Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu
-                    lectus ac dolor placerat tincidunt.
+                    <?php echo $args['text'] ?: 'Connect with us'; ?>
                 </p>
             </div>
             <div class="contact__form">
