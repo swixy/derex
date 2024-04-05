@@ -55,6 +55,7 @@
       padding: vw-small(8px);
       height: vw-small(55px);
       font-size: vw-small(16px);
+      text-align: center;
     }
 
     &.active {
@@ -550,10 +551,11 @@
         margin-bottom: vw-large(56px);
       }
       @include respond-from('medium') {
-
+        gap: vw-medium(32px);
+        margin-bottom: vw-medium(48px);
       }
       @include respond-from('small') {
-
+          flex-direction: column;
       }
 
       &:last-child {
@@ -561,7 +563,8 @@
       }
 
       &:nth-child(even) {
-        flex-direction: row-reverse;
+        //flex-direction: row-reverse;
+        flex-direction: column;
       }
     }
 
@@ -570,14 +573,16 @@
       height: 560px;
       object-fit: cover;
       @include respond-from('large') {
-        width: vw-medium(460px);
-        height: vw-medium(560px);
+        width: vw-large(460px);
+        height: vw-large(560px);
       }
       @include respond-from('medium') {
-
+        width: vw-medium(360px);
+        height: vw-medium(410px);
       }
       @include respond-from('small') {
-
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -599,10 +604,14 @@
         margin-bottom: vw-large(18px);
       }
       @include respond-from('medium') {
-
+        font-size: vw-medium(18px);
+        line-height: vw-medium(22px);
+        margin-bottom: vw-medium(12px);
       }
       @include respond-from('small') {
-
+        font-size: vw-small(18px);
+        line-height: vw-small(22px);
+        margin-bottom: vw-small(12px);
       }
     }
 
@@ -614,12 +623,17 @@
       @include respond-from('large') {
         margin-bottom: vw-large(18px);
         padding-left: vw-large(30px);
+        gap: vw-large(8px);
       }
       @include respond-from('medium') {
-
+        margin-bottom: vw-medium(10px);
+        padding-left: vw-medium(30px);
+        gap: vw-medium(8px);
       }
       @include respond-from('small') {
-
+        margin-bottom: vw-small(10px);
+        padding-left: vw-small(30px);
+        gap: vw-small(8px);
       }
     }
 
@@ -637,10 +651,14 @@
           margin-bottom: vw-large(4px);
         }
         @include respond-from('medium') {
-
+          font-size: vw-medium(16px);
+          line-height: vw-medium(22px);
+          margin-bottom: 0;
         }
         @include respond-from('small') {
-
+          font-size: vw-small(16px);
+          line-height: vw-small(22px);
+          margin-bottom: 0;
         }
 
         &:after {
@@ -659,24 +677,30 @@
             left: vw-large(-28px);
           }
           @include respond-from('medium') {
-
+            width: vw-medium(20px);
+            height: vw-medium(20px);
+            left: vw-medium(-28px);
           }
           @include respond-from('small') {
-
+            width: vw-small(20px);
+            height: vw-small(20px);
+            left: vw-small(-28px);
           }
         }
 
-        @include respond-from('large') {
-          font-size: vw-large(22px);
-          line-height: vw-large(26px);
-          margin-bottom: vw-large(8px);
-        }
-        @include respond-from('medium') {
-
-        }
-        @include respond-from('small') {
-
-        }
+        //@include respond-from('large') {
+        //  font-size: vw-large(22px);
+        //  line-height: vw-large(26px);
+        //  margin-bottom: vw-large(8px);
+        //}
+        //@include respond-from('medium') {
+        //  font-size: vw-medium(22px);
+        //  line-height: vw-medium(26px);
+        //  margin-bottom: vw-medium(8px);
+        //}
+        //@include respond-from('small') {
+        //
+        //}
       }
 
       &__text {
@@ -690,10 +714,12 @@
 
         }
         @include respond-from('medium') {
-
+          font-size: vw-medium(16px);
+          line-height: vw-medium(20px);
         }
         @include respond-from('small') {
-
+          font-size: vw-small(16px);
+          line-height: vw-small(20px);
         }
       }
     }

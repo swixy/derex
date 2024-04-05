@@ -3,8 +3,6 @@ import "./sliders"
 import "./custom"
 
 document.addEventListener('DOMContentLoaded', function () {
-
-
     const rolesItems = document.querySelectorAll('.roles__item');
     rolesItems.forEach(item => {
         const title = item.querySelector('.roles__item__title');

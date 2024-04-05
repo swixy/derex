@@ -5786,6 +5786,7 @@ button:hover {
     padding: 2.0512820513vw;
     height: 14.1025641026vw;
     font-size: 4.1025641026vw;
+    text-align: center;
   }
 }
 .tabs__item.active {
@@ -6355,11 +6356,22 @@ button:hover {
     margin-bottom: 3.8888888889vw;
   }
 }
+@media (max-width: 1023px) {
+  .tabs__lighting__items {
+    gap: 3.8369304556vw;
+    margin-bottom: 5.7553956835vw;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__items {
+    flex-direction: column;
+  }
+}
 .tabs__lighting__items:last-child {
   margin-bottom: 0;
 }
 .tabs__lighting__items:nth-child(even) {
-  flex-direction: row-reverse;
+  flex-direction: column;
 }
 .tabs__lighting__img {
   width: 460px;
@@ -6368,8 +6380,20 @@ button:hover {
 }
 @media (max-width: 1439px) {
   .tabs__lighting__img {
-    width: 55.1558752998vw;
-    height: 67.1462829736vw;
+    width: 31.9444444444vw;
+    height: 38.8888888889vw;
+  }
+}
+@media (max-width: 1023px) {
+  .tabs__lighting__img {
+    width: 43.1654676259vw;
+    height: 49.1606714628vw;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__img {
+    width: 100%;
+    height: auto;
   }
 }
 .tabs__lighting__info {
@@ -6390,6 +6414,20 @@ button:hover {
     margin-bottom: 1.25vw;
   }
 }
+@media (max-width: 1023px) {
+  .tabs__lighting__title {
+    font-size: 2.1582733813vw;
+    line-height: 2.6378896882vw;
+    margin-bottom: 1.4388489209vw;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__title {
+    font-size: 4.6153846154vw;
+    line-height: 5.641025641vw;
+    margin-bottom: 3.0769230769vw;
+  }
+}
 .tabs__lighting__lists {
   display: flex;
   flex-direction: column;
@@ -6400,6 +6438,21 @@ button:hover {
   .tabs__lighting__lists {
     margin-bottom: 1.25vw;
     padding-left: 2.0833333333vw;
+    gap: 0.5555555556vw;
+  }
+}
+@media (max-width: 1023px) {
+  .tabs__lighting__lists {
+    margin-bottom: 1.1990407674vw;
+    padding-left: 3.5971223022vw;
+    gap: 0.9592326139vw;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__lists {
+    margin-bottom: 2.5641025641vw;
+    padding-left: 7.6923076923vw;
+    gap: 2.0512820513vw;
   }
 }
 .tabs__lighting__list__title {
@@ -6415,6 +6468,20 @@ button:hover {
     font-size: 1.5277777778vw;
     line-height: 1.8055555556vw;
     margin-bottom: 0.2777777778vw;
+  }
+}
+@media (max-width: 1023px) {
+  .tabs__lighting__list__title {
+    font-size: 1.9184652278vw;
+    line-height: 2.6378896882vw;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__list__title {
+    font-size: 4.1025641026vw;
+    line-height: 5.641025641vw;
+    margin-bottom: 0;
   }
 }
 .tabs__lighting__list__title:after {
@@ -6435,11 +6502,18 @@ button:hover {
     left: -1.9444444444vw;
   }
 }
-@media (max-width: 1439px) {
-  .tabs__lighting__list__title {
-    font-size: 1.5277777778vw;
-    line-height: 1.8055555556vw;
-    margin-bottom: 0.5555555556vw;
+@media (max-width: 1023px) {
+  .tabs__lighting__list__title:after {
+    width: 2.3980815348vw;
+    height: 2.3980815348vw;
+    left: -3.3573141487vw;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__list__title:after {
+    width: 5.1282051282vw;
+    height: 5.1282051282vw;
+    left: -7.1794871795vw;
   }
 }
 .tabs__lighting__list__text {
@@ -6453,6 +6527,19 @@ button:hover {
     line-height: 1.8055555556vw;
   }
 }
+@media (max-width: 1023px) {
+  .tabs__lighting__list__text {
+    font-size: 1.9184652278vw;
+    line-height: 2.3980815348vw;
+  }
+}
+@media (max-width: 640px) {
+  .tabs__lighting__list__text {
+    font-size: 4.1025641026vw;
+    line-height: 5.1282051282vw;
+  }
+}
+
 .advantages {
   background: rgb(245, 245, 245);
 }
