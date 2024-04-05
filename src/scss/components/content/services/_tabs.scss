@@ -687,20 +687,6 @@
             left: vw-small(-28px);
           }
         }
-
-        //@include respond-from('large') {
-        //  font-size: vw-large(22px);
-        //  line-height: vw-large(26px);
-        //  margin-bottom: vw-large(8px);
-        //}
-        //@include respond-from('medium') {
-        //  font-size: vw-medium(22px);
-        //  line-height: vw-medium(26px);
-        //  margin-bottom: vw-medium(8px);
-        //}
-        //@include respond-from('small') {
-        //
-        //}
       }
 
       &__text {

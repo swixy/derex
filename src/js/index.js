@@ -55,6 +55,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+// Находим все элементы с классом .country
+    const countries = document.querySelectorAll('.country');
+// Находим все элементы с классом .country__name
+    const countryNames = document.querySelectorAll('.country__name');
+
+// Функция для добавления класса active
+    const addActiveClass = (id) => {
+        countryNames.forEach(name => {
+            if (name.getAttribute('data-id') === id) {
+                name.classList.add('active');
+            }
+        });
+    };
+
+// Функция для удаления класса active
+    const removeActiveClass = () => {
+        countryNames.forEach(name => {
+            name.classList.remove('active');
+        });
+    };
+
+// Добавляем обработчики для элементов .country и .country__name
+    countries.forEach(country => {
+        country.addEventListener('mouseover', function() {
+            const id = this.id;
+            addActiveClass(id);
+        });
+
+        country.addEventListener('mouseout', function() {
+            removeActiveClass();
+        });
+    });
+
+    countryNames.forEach(name => {
+        name.addEventListener('mouseover', function() {
+            const id = this.getAttribute('data-id');
+            addActiveClass(id);
+        });
+
+        name.addEventListener('mouseout', function() {
+            removeActiveClass();
+        });
+    });
+
+
+
+
+
 
 
     function switchTab(tabIndex) {

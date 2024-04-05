@@ -4658,8 +4658,42 @@ button:hover {
   }
 }
 
+.geography__title {
+  color: rgb(48, 48, 51);
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+@media (max-width: 1439px) {
+  .geography__title {
+    font-size: 2.7777777778vw;
+    line-height: 3.1944444444vw;
+    margin-bottom: 3.3333333333vw;
+  }
+}
+@media (max-width: 1023px) {
+  .geography__title {
+    font-size: 3.8369304556vw;
+    line-height: 4.5563549161vw;
+    margin-bottom: 3.8369304556vw;
+  }
+}
+@media (max-width: 640px) {
+  .geography__title {
+    font-size: 8.2051282051vw;
+    line-height: 9.7435897436vw;
+    margin-bottom: 8.2051282051vw;
+  }
+}
+@media (max-width: 640px) {
+  .geography__container {
+    overflow: scroll;
+  }
+}
 .geography svg {
-  display: none;
+  width: 100%;
+  height: auto;
 }
 .geography svg .country {
   cursor: pointer;
@@ -4671,22 +4705,23 @@ button:hover {
 }
 .geography svg .country:hover {
   opacity: 0.9;
+  ndex: 999999;
 }
-.geography svg .country:hover + .country__name {
-  opacity: 1;
-  z-index: 999999;
-}
-.geography svg .country:hover + .country__name + .country__name {
-  opacity: 1;
-  z-index: 999999;
-}
-.geography svg .country + .country__name {
+.geography svg .country__name {
   opacity: 0;
-  transition: all 0.2s ease-in-out;
+  height: 0;
+  transform: translateY(-1000%);
+  transition: opacity 0.3s ease-in-out;
 }
-.geography svg .country + .country__name + .country__name {
-  opacity: 0;
-  transition: all 0.2s ease-in-out;
+.geography svg .country__name.active {
+  opacity: 1;
+  height: 100%;
+  transform: translateY(0);
+}
+@media (max-width: 640px) {
+  .geography svg {
+    width: 179.4871794872vw;
+  }
 }
 
 .career-page .hero {
