@@ -1,19 +1,43 @@
 .card {
     color: $black;
 
+    a {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__thumb {
         margin-bottom: 16px;
-        max-height: 360px;
+        height: 350px;
         width: 100%;
-        height: 100%;
         object-fit: cover;
+
+        @include respond-from('large') { 
+            height: vw-large(350px);
+        }
+        @include respond-from('medium') { 
+            height: vw-medium(350px);
+        }
+        @include respond-from('small') { 
+            height: vw-small(350px);
+        }
     }
 
     &.big {
         .card__thumb {
-            min-height: 690px;
+            height: 690px;
             object-fit: cover;
             margin-bottom: 16px;
+
+            @include respond-from('large') { 
+                height: vw-large(690px);
+            }
+            @include respond-from('medium') { 
+                height: vw-medium(350px);
+            }
+            @include respond-from('small') { 
+                height: vw-medium(350px);
+            }
         }
     }
 

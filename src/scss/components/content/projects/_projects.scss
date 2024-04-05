@@ -11,10 +11,16 @@
         @include respond-from('large') { 
             gap: vw-large(56px) vw-large(27px);
         }
+        @include respond-from('medium') { 
+            gap: vw-medium(56px) vw-medium(27px);
+            grid-template-columns: 1fr;
+        }
+        @include respond-from('small') { 
+            gap: vw-small(56px) vw-small(27px);
+            grid-template-columns: 1fr;
+        }
 
         &--first {
-            gap: 27px;
-
             column-count: 2;
             column-gap: 27px;
             
@@ -22,11 +28,25 @@
                 gap: vw-large(27px);
                 margin-bottom: vw-large(56px);
             }
+            @include respond-from('medium') { 
+                gap: vw-medium(56px);
+                column-count: 1;
+            }
+            @include respond-from('small') { 
+                gap: vw-small(56px);
+                column-count: 1;
+            }
 
             .card {
                 margin-bottom: 56px;
                 @include respond-from('large') {
                     margin-bottom: vw-large(56px);
+                }
+                @include respond-from('medium') { 
+                    margin-bottom: vw-medium(56px);
+                }
+                @include respond-from('small') { 
+                    margin-bottom: vw-small(56px);
                 }
             }
         }
