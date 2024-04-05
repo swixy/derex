@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php wp_body_open(); ?>
-<header class="header">
+<header class="header default">
     <div class="container" data-aos="fade">
         <div class="header__container">
             <a href="/">
@@ -25,7 +25,36 @@
                 ?>
             </nav>
             <div class="header__lang">
-                EN
+
+
+                <div class="header__lang__cur"><?php
+                    if (function_exists('pll_current_language')) {
+                        $current_language = pll_current_language();
+                        if ($current_language) {
+                            echo esc_html($current_language);
+                        }
+                    }
+                    ?>
+
+                    <?php
+                    if (function_exists('pll_the_languages')) {
+                        $languages = pll_the_languages(array('raw' => true));
+                        if ($languages) {
+                            echo '<ul>';
+                            foreach ($languages as $lang) {
+                                $selected = isset($lang['current']) && $lang['current'] ? 'class="selected"' : '';
+                                echo '<li><a href="' . esc_attr($lang['url']) . '" ' . $selected . '>';
+                                echo esc_html($lang['name']);
+                                echo '</a></li>';
+                            }
+                            echo '</ul>';
+                        }
+                    }
+                    ?>
+
+                </div>
+
+
             </div>
             <div class="hamburger-menu">
                 <div class="bar-top"></div>

@@ -72,6 +72,14 @@ document.addEventListener('DOMContentLoaded', function () {
         createElements: true,
         slidesPerView: 3,
         direction: "vertical",
+        breakpoints: {
+            0: {
+                direction: "horizontal",
+            },
+            641: {
+                direction: "vertical",
+            }
+        }
     });
     const sliderVerticalContent= new Swiper(".sliderVertical__content", {
         spaceBetween: 10,
@@ -83,6 +91,15 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbs: {
             swiper: sliderVerticalLists,
         },
+        breakpoints: {
+            0: {
+                direction: "horizontal",
+                autoHeight: true,
+            },
+            641: {
+                direction: "vertical",
+            }
+        }
     });
 
     const sliderStepLists = new Swiper(".slider__step__items", {
@@ -90,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
         createElements: true,
         slidesPerView: 5,
         direction: "vertical",
+
     });
     const sliderStepContent= new Swiper(".slider__step__contents", {
         spaceBetween: 10,
@@ -98,6 +116,15 @@ document.addEventListener('DOMContentLoaded', function () {
         thumbs: {
             swiper: sliderStepLists,
         },
+        breakpoints: {
+            0: {
+                direction: "horizontal",
+                autoHeight: true,
+            },
+            641: {
+                direction: "vertical",
+            }
+        }
     });
 
     const sliderSingleProject = new Swiper(".project__slider", {

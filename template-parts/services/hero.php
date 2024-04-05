@@ -15,7 +15,7 @@ $button_text = $info_hero['button_text'];
             <?php endif; ?>
             <?php if ($text): ?>
                 <p class="hero__info__text">
-                    <?php echo esc_html($text) ?>
+                    <?php echo wp_kses_post($text) ?>
                 </p>
             <?php endif; ?>
             <?php if ($button_text): ?>

@@ -28,55 +28,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    setContainerHeight();
-    document.querySelectorAll('.sliderVertical__lists__item').forEach(item => {
-        item.addEventListener('click', () => {
-            setContainerHeight();
-        });
-    });
 
+    setContainerHeight();
     function setContainerHeight() {
-        const activeSlide = document.querySelector('.sliderVertical__content__item.swiper-slide-active');
-        if (activeSlide) {
-            const slideHeight = activeSlide.clientHeight;
-            const container = document.querySelector('.sliderVertical__container');
-            container.style.height = slideHeight + 'px';
+        if (window.innerWidth > 640) {
+            const activeSlide = document.querySelector('.sliderVertical__content__item.swiper-slide-active');
+            if (activeSlide) {
+                const slideHeight = activeSlide.clientHeight;
+                const container = document.querySelector('.sliderVertical__container');
+                container.style.height = slideHeight + 'px';
+            }
         }
     }
+    function handleSlideItemClick() {
+        if (window.innerWidth > 640) {
+            setContainerHeight();
+        }
+    }
+    function handleResizeAndLoad() {
+        if (window.innerWidth > 640) {
+            setContainerHeight();
+        }
+    }
+    window.addEventListener('resize', handleResizeAndLoad);
+    document.querySelectorAll('.sliderVertical__lists__item').forEach(item => {
+        item.addEventListener('click', handleSlideItemClick);
+    });
 
-    // document.querySelectorAll('.sliderVertical__lists__item').forEach(item => {
-    //     item.addEventListener('click', () => {
-    //         const activeSlide = document.querySelector('.sliderVertical__content__item.swiper-slide-active');
-    //         if (activeSlide) {
-    //             const slideHeight = activeSlide.clientHeight;
-    //             console.log(slideHeight);
-    //             const container = document.querySelector('.sliderVertical__container');
-    //             container.style.height = slideHeight + 'px';
-    //         }
-    //     });
-    // });
 
 
-    // function switchTab(tabIndex) {
-    //     const tabItems = document.querySelectorAll('.tabs__item');
-    //     const tabContent = document.querySelectorAll('.tabs__content');
-    //
-    //     tabContent.forEach(content => {
-    //         content.style.display = 'none';
-    //     });
-    //
-    //     tabItems.forEach(item => {
-    //         item.classList.remove('active');
-    //     });
-    //
-    //     tabContent[tabIndex].style.display = 'block';
-    //     tabContent[tabIndex].style.opacity = 0;
-    //     setTimeout(() => {
-    //         tabContent[tabIndex].style.opacity = 1;
-    //     }, 100);
-    //
-    //     tabItems[tabIndex].classList.add('active');
-    // }
 
     function switchTab(tabIndex) {
         const tabItems = document.querySelectorAll('.tabs__item');
@@ -120,21 +100,212 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     const sliderItems = document.querySelectorAll('.step__slider__item');
-
     sliderItems.forEach((item, index) => {
         item.addEventListener('click', function () {
-            // Remove "active" class from all elements
             sliderItems.forEach(item => item.classList.remove('active'));
-
-            // Find the index of the clicked element
             const clickedIndex = Array.from(sliderItems).indexOf(item);
-
-            // Loop through the previous elements and add the "active" class
             for (let i = 0; i < clickedIndex; i++) {
                 sliderItems[i].classList.add('active');
             }
         });
     });
+
+    //MENU HEADER
+    const menuBtn = document.querySelector(".hamburger-menu");
+    const header = document.querySelector(".header");
+    const body = document.querySelector("body");
+    const headerMenu = document.querySelector(".header__navigator");
+
+    if (menuBtn) {
+        menuBtn.addEventListener("click", function () {
+            if (header) {
+                header.classList.toggle("mobile");
+            }
+            if (headerMenu) {
+                headerMenu.classList.toggle("active");
+            }
+            if (menuBtn) {
+                menuBtn.classList.toggle("active");
+            }
+            if (body) {
+                body.classList.toggle("overflow");
+            }
+        });
+    }
+    let prevScrollpos = window.pageYOffset;
+    window.addEventListener('scroll', function () {
+        const currentScrollPos = window.pageYOffset;
+        if (currentScrollPos === 0) {
+            header.classList.add("default");
+            header.classList.remove("visible");
+        } else if (prevScrollpos > currentScrollPos) {
+            header.classList.add("visible");
+            header.classList.remove("default");
+        } else {
+            header.classList.remove("visible");
+            header.classList.remove("default");
+        }
+        prevScrollpos = currentScrollPos;
+    });
+
+
+
+    window.addEventListener('load', checkScreenWidth);
+    window.addEventListener('resize', checkScreenWidth);
+
+    function checkScreenWidth() {
+        if (window.innerWidth >= 1024) {
+
+            const menuItems = document.querySelectorAll('.menu-item-has-children');
+            if (menuItems.length > 0) {
+                menuItems.forEach(item => {
+                    item.addEventListener('mouseenter', function() {
+                        this.classList.add('active');
+                    });
+
+                    item.addEventListener('mouseleave', function() {
+
+                        this.classList.remove('active');
+                    });
+                });
+            }
+        } else {
+            const menuItems = document.querySelectorAll('.menu-item-has-children');
+            menuItems.forEach(item => {
+                item.removeEventListener('mouseenter', null);
+                item.removeEventListener('mouseleave', null);
+            });
+            if (window.innerWidth < 1024) {
+
+                const menuItems = document.querySelectorAll('.menu-item-has-children');
+
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function(e) {
+                        if (this.classList.contains('active')) {
+                            this.classList.remove('active');
+                        } else {
+                            menuItems.forEach(item => {
+                                item.classList.remove('active');
+                            });
+                            this.classList.add('active');
+                        }
+                        e.stopPropagation();
+                    });
+
+                    item.addEventListener('mouseover', function(event) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        return false;
+                    });
+                });
+
+                document.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('menu-item-has-children')) {
+                        menuItems.forEach(item => {
+                            item.classList.remove('active');
+                        });
+                    }
+                });
+            }
+        }
+    }
+
+
+    document.querySelector('.header__lang__cur').addEventListener('click', function(event) {
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+        } else {
+            this.classList.add('active');
+        }
+        event.stopPropagation();
+    });
+
+
+    document.addEventListener('click', function(event) {
+        const headerLangCur = document.querySelector('.header__lang__cur');
+        if (event.target !== headerLangCur) {
+            headerLangCur.classList.remove('active');
+        }
+    });
+
+
+
+    function moveLangCurElement() {
+        const headerLangCur = document.querySelector('.header__lang');
+        const menuHeader = document.querySelector('.header__navigator .menu');
+        if (headerLangCur && menuHeader) {
+            if (!menuHeader.contains(headerLangCur)) {
+                menuHeader.appendChild(headerLangCur);
+            }
+        } else {
+            if (menuHeader.contains(headerLangCur)) {
+                menuHeader.removeChild(headerLangCur);
+            }
+        }
+    }
+
+    function handleResizeAndLoad() {
+        if (window.innerWidth < 1024) {
+            moveLangCurElement();
+        }
+    }
+    moveLangCurElement();
+// Вызов функции при загрузке страницы
+//     document.addEventListener('DOMContentLoaded', handleResizeAndLoad);
+
+// Вызов функции при изменении размера окна (ресайзе)
+    window.addEventListener('resize', handleResizeAndLoad);
+
+
+
+
+
+
+// Проверяем разрешение экрана при загрузке страницы и при изменении размера окна.
+//     window.addEventListener('load', checkScreenWidth);
+//     window.addEventListener('resize', checkScreenWidth);
+//
+//     function checkScreenWidth() {
+//         if (window.innerWidth < 1024) { // Если ширина экрана меньше 1024
+//             // Находим все пункты меню с классом menu-item-has-children.
+//             const menuItems = document.querySelectorAll('.menu-item-has-children');
+//
+//             // Добавляем обработчик события для каждого пункта меню.
+//             menuItems.forEach(item => {
+//                 item.addEventListener('click', function(e) {
+//                     if (this.classList.contains('active')) {
+//                         this.classList.remove('active');
+//                     } else {
+//                         menuItems.forEach(item => {
+//                             item.classList.remove('active');
+//                         });
+//                         this.classList.add('active');
+//                     }
+//                     e.stopPropagation(); // Остановить всплытие события, чтобы предотвратить закрытие при нажатии на дочерние элементы.
+//                 });
+//
+//                 // Отключаем стандартное поведение при hover на пунктах меню.
+//                 item.addEventListener('mouseover', function(event) {
+//                     event.preventDefault();
+//                     event.stopPropagation();
+//                     return false;
+//                 });
+//             });
+//
+//             // Добавляем обработчик события для закрытия активного класса при щелчке на любом элементе документа.
+//             document.addEventListener('click', function(e) {
+//                 if (!e.target.classList.contains('menu-item-has-children')) {
+//                     menuItems.forEach(item => {
+//                         item.classList.remove('active');
+//                     });
+//                 }
+//             });
+//         }
+//     }
+
+
+
+
 
 
     const buttonsCat = document.querySelectorAll('.filter__items-cat .filter__item');

@@ -1,18 +1,18 @@
 .hero-about {
   padding: 0;
   .container{
-    padding-top: 90px;
+    padding-top: 130px;
     padding-bottom: 70px;
     @include respond-from('large') {
-      padding-top: vw-large(90px);
+      padding-top: vw-large(130px);
       padding-bottom: vw-large(70px);
     }
     @include respond-from('medium') {
-      padding-top: vw-medium(70px);
+      padding-top: vw-medium(130px);
       padding-bottom: vw-medium(60px);
     }
     @include respond-from('small') {
-      padding-top: vw-small(70px);
+      padding-top: vw-small(130px);
       padding-bottom: vw-small(70px);
     }
   }
