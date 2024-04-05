@@ -130,6 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
+
+
     const indicator = document.querySelector('.tabs__indicator');
     const activeTab = document.querySelector('.tabs__item.active');
     if (indicator) {
