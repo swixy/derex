@@ -113,4 +113,11 @@ $excerpt = get_the_excerpt();
     </div>
 </section>
 
-<?php get_template_part('template-parts/contact') ?>
+<?php get_template_part(
+    'template-parts/contact',
+    null,
+    [
+        'title' => 'Let’s discuss your idea!',
+        'text' => 'Donec dapibus velit ac augue bibendum laoreet. Sed ac dolor non nulla lacinia bibendum. Morbi eu lectus ac dolor placerat tincidunt.'
+    ]
+); ?>
