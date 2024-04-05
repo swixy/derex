@@ -1,6 +1,11 @@
 .card {
     color: $black;
 
+    a {
+        display: flex;
+        flex-direction: column;
+    }
+
     &__thumb {
         margin-bottom: 16px;
         max-height: 360px;
@@ -14,6 +19,16 @@
             min-height: 690px;
             object-fit: cover;
             margin-bottom: 16px;
+
+            @include respond-from('large') { 
+                min-height: vw-large(690px);
+            }
+            @include respond-from('medium') { 
+                min-height: unset;
+            }
+            @include respond-from('small') { 
+                min-height: unset;
+            }
         }
     }
 
