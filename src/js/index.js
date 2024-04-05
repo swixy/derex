@@ -58,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+
     function switchTab(tabIndex) {
         const tabItems = document.querySelectorAll('.tabs__item');
         const tabContents = document.querySelectorAll('.tabs__content');

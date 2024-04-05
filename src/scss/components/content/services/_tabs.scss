@@ -462,6 +462,7 @@
         @include respond-from('small') {
           padding-left: vw-small(28px);
           margin-bottom: vw-small(12px);
+
         }
 
         &__title {
