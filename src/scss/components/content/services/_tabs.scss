@@ -45,7 +45,16 @@
       padding: vw-large(16px);
       height: vw-large(55px);
       font-size: vw-large(20px);
-      font-weight: 400;
+    }
+    @include respond-from('medium') {
+      padding: vw-medium(16px);
+      height: vw-medium(55px);
+      font-size: vw-medium(20px);
+    }
+    @include respond-from('small') {
+      padding: vw-small(8px);
+      height: vw-small(55px);
+      font-size: vw-small(16px);
     }
 
     &.active {
@@ -122,12 +131,27 @@
       column-gap: vw-large(42px);
       row-gap: vw-large(64px);
     }
+    @include respond-from('medium') {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: vw-medium(24px);
+      row-gap: vw-medium(32px);
+    }
+    @include respond-from('small') {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: vw-medium(24px);
+    }
   }
 
   &__point {
     padding-left: 30px;
     @include respond-from('large') {
       padding-left: vw-large(30px);
+    }
+    @include respond-from('medium') {
+      padding-left: vw-medium(30px);
+    }
+    @include respond-from('small') {
+      padding-left: vw-small(30px);
     }
 
     &__title {
@@ -141,6 +165,16 @@
         font-size: vw-large(24px);
         line-height: vw-large(28px);
         margin-bottom: vw-large(8px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(24px);
+        line-height: vw-medium(28px);
+        margin-bottom: vw-medium(8px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(24px);
+        line-height: vw-small(28px);
+        margin-bottom: vw-small(8px);
       }
 
       &:after {
@@ -158,18 +192,16 @@
           height: vw-large(22px);
           left: vw-large(-30px);
         }
-      }
-
-      @include respond-from('large') {
-        font-size: vw-large(24px);
-        line-height: vw-large(28px);
-        margin-bottom: vw-large(8px);
-      }
-      @include respond-from('medium') {
-
-      }
-      @include respond-from('small') {
-
+        @include respond-from('medium') {
+          width: vw-medium(22px);
+          height: vw-medium(22px);
+          left: vw-medium(-30px);
+        }
+        @include respond-from('small') {
+          width: vw-small(22px);
+          height: vw-small(22px);
+          left: vw-small(-30px);
+        }
       }
     }
 
@@ -184,10 +216,12 @@
 
       }
       @include respond-from('medium') {
-
+        font-size: vw-medium(18px);
+        line-height: vw-medium(26px);
       }
       @include respond-from('small') {
-
+        font-size: vw-small(18px);
+        line-height: vw-small(26px);
       }
     }
   }
@@ -206,6 +240,16 @@
         margin-bottom: vw-large(56px);
 
       }
+      @include respond-from('medium') {
+        font-size: vw-medium(32px);
+        line-height: vw-medium(38px);
+        margin-bottom: vw-medium(56px);
+      }
+      @include respond-from('small') {
+        font-size: vw-small(28px);
+        line-height: vw-small(34px);
+        margin-bottom: vw-small(24px);
+      }
     }
 
     &__slider {
@@ -222,17 +266,33 @@
         max-height: vw-large(700px);
         padding: 0 vw-large(100px);
       }
+      @include respond-from('medium') {
+        gap: vw-medium(100px);
+        max-height: vw-medium(700px);
+        padding: 0;
+      }
+      @include respond-from('small') {
+        flex-direction: column;
+        gap: vw-small(30px);
+        max-height: none;
+      }
     }
   }
 
   .slider__step__items {
-    //height: min-content;
     .swiper-wrapper {
       display: flex;
       flex-direction: column;
       gap: 40px;
       @include respond-from('large') {
         gap: vw-large(40px);
+      }
+      @include respond-from('medium') {
+        gap: vw-medium(40px);
+      }
+      @include respond-from('small') {
+        flex-direction: row;
+        gap: vw-small(20px);
       }
     }
 
@@ -245,6 +305,13 @@
       position: relative;
       @include respond-from('large') {
         gap: vw-large(24px);
+      }
+      @include respond-from('medium') {
+        gap: vw-medium(24px);
+      }
+      @include respond-from('small') {
+        width: max-content;
+        margin-bottom: 0 !important;
       }
 
       &:before {
@@ -262,6 +329,18 @@
           top: vw-large(48px);
           left: vw-large(23px);
         }
+        @include respond-from('medium') {
+          width: vw-medium(2px);
+          top: vw-medium(48px);
+          left: vw-medium(23px);
+        }
+        @include respond-from('small') {
+          height: vw-small(2px);
+          left: auto;
+          right: vw-small(-20px);
+          width: 0;
+          top: 50%;
+        }
       }
 
       &.active {
@@ -278,6 +357,14 @@
           height: 54px;
           @include respond-from('large') {
             height: vw-large(54px);
+          }
+          @include respond-from('medium') {
+            height: vw-medium(54px);
+          }
+          @include respond-from('small') {
+            height: vw-small(2px);
+            width: vw-small(22px);
+
           }
         }
       }
@@ -313,6 +400,16 @@
           height: vw-large(48px);
           font-size: vw-large(28px);
         }
+        @include respond-from('medium') {
+          width: vw-medium(48px);
+          height: vw-medium(48px);
+          font-size: vw-medium(28px);
+        }
+        @include respond-from('small') {
+          width: vw-small(42px);
+          height: vw-small(42px);
+          font-size: vw-small(26px);
+        }
       }
 
       h4 {
@@ -322,6 +419,13 @@
         @include respond-from('large') {
           font-size: vw-large(22px);
         }
+        @include respond-from('medium') {
+          font-size: vw-medium(22px);
+        }
+        @include respond-from('small') {
+          display: none;
+          font-size: vw-small(18px);
+        }
       }
     }
   }
@@ -330,6 +434,13 @@
     max-height: 700px;
     @include respond-from('large') {
       max-height: vw-large(700px);
+    }
+    @include respond-from('medium') {
+      max-height: vw-medium(700px);
+    }
+    @include respond-from('small') {
+      max-height: none;
+      width: 100%;
     }
 
     .slider__step__content {
@@ -344,6 +455,14 @@
           padding-left: vw-large(28px);
           margin-bottom: vw-large(16px);
         }
+        @include respond-from('medium') {
+          padding-left: vw-medium(28px);
+          margin-bottom: vw-medium(16px);
+        }
+        @include respond-from('small') {
+          padding-left: vw-small(28px);
+          margin-bottom: vw-small(12px);
+        }
 
         &__title {
           color: $black;
@@ -356,6 +475,16 @@
             font-size: vw-large(22px);
             line-height: vw-large(26px);
             margin-bottom: vw-large(4px);
+          }
+          @include respond-from('medium') {
+            font-size: vw-medium(18px);
+            line-height: vw-medium(22px);
+            margin-bottom: vw-medium(4px);
+          }
+          @include respond-from('small') {
+            font-size: vw-small(18px);
+            line-height: vw-small(22px);
+            margin-bottom: vw-small(4px);
           }
 
           &:after {
@@ -373,19 +502,18 @@
               height: vw-large(20px);
               left: vw-large(-28px);
             }
+            @include respond-from('medium') {
+              width: vw-medium(16px);
+              height: vw-medium(16px);
+              left: vw-medium(-22px);
+            }
+            @include respond-from('small') {
+              width: vw-small(16px);
+              height: vw-small(16px);
+              left: vw-small(-22px);
+            }
           }
 
-          @include respond-from('large') {
-            font-size: vw-large(22px);
-            line-height: vw-large(26px);
-            margin-bottom: vw-large(8px);
-          }
-          @include respond-from('medium') {
-
-          }
-          @include respond-from('small') {
-
-          }
         }
 
         &__text {
@@ -399,17 +527,20 @@
 
           }
           @include respond-from('medium') {
-
+            font-size: vw-medium(16px);
+            line-height: vw-medium(24px);
           }
           @include respond-from('small') {
-
+            font-size: vw-small(16px);
+            line-height: vw-small(24px);
           }
         }
       }
     }
   }
-  &__lighting{
-    &__items{
+
+  &__lighting {
+    &__items {
       display: flex;
       gap: 120px;
       margin-bottom: 56px;
@@ -417,14 +548,23 @@
         gap: vw-large(120px);
         margin-bottom: vw-large(56px);
       }
-      &:last-child{
+      @include respond-from('medium') {
+
+      }
+      @include respond-from('small') {
+
+      }
+
+      &:last-child {
         margin-bottom: 0;
       }
-      &:nth-child(even){
+
+      &:nth-child(even) {
         flex-direction: row-reverse;
       }
     }
-    &__img{
+
+    &__img {
       width: 460px;
       height: 560px;
       object-fit: cover;
@@ -432,14 +572,22 @@
         width: vw-medium(460px);
         height: vw-medium(560px);
       }
+      @include respond-from('medium') {
+
+      }
+      @include respond-from('small') {
+
+      }
     }
-    &__info{
+
+    &__info {
       display: flex;
       flex-direction: column;
       justify-content: center;
 
     }
-    &__title{
+
+    &__title {
       font-size: 24px;
       font-weight: 700;
       line-height: 28px;
@@ -449,8 +597,15 @@
         line-height: vw-large(28px);
         margin-bottom: vw-large(18px);
       }
+      @include respond-from('medium') {
+
+      }
+      @include respond-from('small') {
+
+      }
     }
-    &__lists{
+
+    &__lists {
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -459,8 +614,15 @@
         margin-bottom: vw-large(18px);
         padding-left: vw-large(30px);
       }
+      @include respond-from('medium') {
+
+      }
+      @include respond-from('small') {
+
+      }
     }
-    &__list{
+
+    &__list {
       &__title {
         color: $black;
         font-size: 22px;
@@ -472,6 +634,12 @@
           font-size: vw-large(22px);
           line-height: vw-large(26px);
           margin-bottom: vw-large(4px);
+        }
+        @include respond-from('medium') {
+
+        }
+        @include respond-from('small') {
+
         }
 
         &:after {
@@ -488,6 +656,12 @@
             width: vw-large(20px);
             height: vw-large(20px);
             left: vw-large(-28px);
+          }
+          @include respond-from('medium') {
+
+          }
+          @include respond-from('small') {
+
           }
         }
 

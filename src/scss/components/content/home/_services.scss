@@ -39,6 +39,9 @@
       margin-bottom: vw-medium(48px);
     }
     @include respond-from('small') {
+      br{
+        display: none;
+      }
       font-size: vw-small(20px);
       line-height: vw-small(28px);
       margin-bottom: vw-small(40px);

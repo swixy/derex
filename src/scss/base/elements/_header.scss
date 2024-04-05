@@ -1,7 +1,14 @@
 .header {
+  position: fixed;
+  top: 0;
   height: 64px;
   display: flex;
   align-items: center;
+  z-index: 112;
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  background: #FFFFFF;
   @include respond-from('large') {
     height: vw-large(64px);
   }
@@ -11,10 +18,19 @@
   @include respond-from('small') {
     height: vw-small(56px);
   }
-
+  &.visible{
+    transform: translateY(0);
+    filter: drop-shadow(0px 0 10px rgba(1, 1, 1, 0.1));
+  }
+  &.default{
+    transform: translateY(0);
+    z-index: 112;
+  }
   &__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
   }
 
   &__logo {
@@ -31,62 +47,168 @@
   }
 
   &__navigator {
-    ul {
+    &.active {
+      .menu {
+        background: #FFFFFF;
+        display: flex;
+        @include respond-from('medium') {
+          top: vw-medium(55px);
+        }
+        @include respond-from('small') {
+          top: vw-small(55px);
+        }
+      }
+    }
+
+    .menu {
       margin: 0;
       display: flex;
       list-style: none;
       gap: 40px;
+      transition: all .3s ease-in-out;
       @include respond-from('large') {
         gap: vw-large(40px);
       }
       @include respond-from('medium') {
-        display: none;
+        gap: vw-medium(10px);
+        position: absolute;
+        left: 0;
+        top: -1000%;
+        height: auto;
+        padding: vw-medium(20px) vw-medium(56px) 0 vw-medium(56px);
+        flex-direction: column;
+        background: white;
+        z-index: 99;
+        width: 100%;
+      }
+      @include respond-from('small') {
+        //height: 100%;
+        padding: vw-small(20px) vw-small(20px) 0 vw-small(20px);
       }
 
       a {
         color: $black;
         font-weight: 600;
+        font-size: 16px;
+        @include respond-from('large') {
+          font-size: vw-large(18px);
+        }
+        @include respond-from('medium') {
+          font-size: vw-medium(18px);
+        }
+        @include respond-from('small') {
+          font-size: vw-small(18px);
+        }
       }
 
       li {
         padding: 10px 12px;
         transition: all .2s ease-in-out;
+        @include respond-from('large') {
+          padding: vw-large(10px) vw-large(12px);
+        }
+        @include respond-from('medium') {
+          padding: vw-medium(10px) 0;
+        }
 
         a {
           transition: all .2s ease-in-out;
         }
 
         &:hover {
-          &>a {
+          & > a {
             color: $orange;
           }
         }
 
         &.menu-item-has-children {
-          a {
-            pointer-events: none;
+          padding: 10px 34px 10px 12px;
+          position: relative;
+          @include respond-from('large') {
+            padding: vw-large(10px) vw-large(34px) vw-large(10px) vw-large(12px);
           }
+          @include respond-from('medium') {
+            padding: vw-medium(10px) 0 vw-medium(10px) 0;
+          }
+
+          & > a {
+            pointer-events: none !important;
+          }
+
           &:hover {
             cursor: pointer;
-            &>a {
+
+            & > a {
               color: $black;
             }
           }
-          padding: 10px 34px 10px 12px;
-          position: relative;
 
-          &:hover {
+          &:before {
+            position: absolute;
+            content: '';
+            width: 18px;
+            height: 18px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none"><path d="M1.71436 5.5L8.89103 12.5L16.3856 5.55185" stroke="%23303033" stroke-width="1.5"/></svg>');
+            background-size: cover;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all .2s ease-in-out;
+            @include respond-from('large') {
+              width: vw-large(18px);
+              height: vw-large(18px);
+              right: vw-large(4px);
+            }
+            @include respond-from('medium') {
+              width: vw-medium(18px);
+              height: vw-medium(18px);
+              right: vw-medium(4px);
+              top: vw-medium(18px);
+            }
+            @include respond-from('small') {
+              width: vw-small(18px);
+              height: vw-small(18px);
+              right: vw-small(4px);
+              top: vw-small(18px);
+            }
+          }
+
+
+          &.active {
             background: #F3F3F3;
+            @include respond-from('medium') {
+              background: #FFFFFF;
+              & > a {
+                color: $orange;
+              }
+            }
 
             &:before {
               transform: translateY(-50%) rotate(180deg);
+              @include respond-from('medium') {
+                transform: translateY(0) rotate(180deg);
+                top: vw-medium(10px);
+              }
             }
 
             .sub-menu {
+              background: #F3F3F3;
               display: block;
               position: absolute;
               top: 40px;
               left: 0;
+              list-style: none;
+              margin: 0;
+              @include respond-from('large') {
+                top: vw-large(40px);
+              }
+              @include respond-from('medium') {
+                top: 0;
+                background: #FFFFFF;
+                opacity: 1;
+                height: min-content;
+                position: relative;
+              }
 
               li {
 
@@ -101,36 +223,206 @@
                   }
                 }
               }
-            }
-          }
 
-          &:before {
-            position: absolute;
-            content: '';
-            width: 18px;
-            height: 18px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none"><path d="M1.71436 5.5L8.89103 12.5L16.3856 5.55185" stroke="%23303033" stroke-width="1.5"/></svg>');
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            transition: all .2s ease-in-out;
+            }
           }
         }
 
         .sub-menu {
           display: none;
-          background: #F3F3F3;
+          background: white;
           min-width: 100%;
           width: max-content;
           z-index: 2;
           padding: 5px 10px 5px 0;
-
+          @include respond-from('large') {
+            padding: vw-large(5px) vw-large(10px) vw-large(5px) 0;
+          }
+          @include respond-from('medium') {
+            opacity: 0;
+            height: 0;
+            top: 0;
+            position: relative;
+            //padding-left: vw-medium(30px);
+            padding: vw-medium(5px) vw-medium(10px) vw-medium(5px) vw-medium(30px);
+          }
         }
       }
     }
   }
 
+  &__lang {
+    &__cur {
+      font-size: 16px;
+      padding: 10px 36px 10px 16px;
+      text-transform: uppercase;
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        position: absolute;
+        content: '';
+        width: 18px;
+        height: 18px;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none"><path d="M1.71436 5.5L8.89103 12.5L16.3856 5.55185" stroke="%23303033" stroke-width="1.5"/></svg>');
+        background-size: cover;
+        right: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all .2s ease-in-out;
+        @include respond-from('large') {
+          width: vw-large(18px);
+          height: vw-large(18px);
+          right: vw-large(4px);
+        }
+        @include respond-from('medium') {
+          width: vw-medium(18px);
+          height: vw-medium(18px);
+          right: vw-medium(4px);
+          top: vw-medium(18px);
+        }
+        @include respond-from('small') {
+          width: vw-small(18px);
+          height: vw-small(18px);
+          right: vw-small(4px);
+          top: vw-small(18px);
+        }
+      }
+
+      @include respond-from('large') {
+        font-size: vw-large(18px);
+        padding: vw-large(10px) vw-large(36px) vw-large(10px) vw-large(16px);
+      }
+      @include respond-from('medium') {
+        font-size: vw-medium(18px);
+        padding: vw-medium(10px) vw-medium(36px) vw-medium(10px) 0;
+        border-top: 1px solid #F3F3F3;
+      }
+      @include respond-from('small') {
+        font-size: vw-small(18px);
+        padding: vw-small(10px) vw-small(36px) vw-small(10px) 0;
+      }
+
+      &.active {
+        background: #F3F3F3;
+        @include respond-from('medium') {
+          background: #FFFFFF;
+        }
+
+        &:before {
+          transform: rotate(180deg) translateY(50%);
+        }
+
+        ul {
+          opacity: 1;
+          @include respond-from('medium') {
+            background: #FFFFFF;
+            width: 100%;
+            padding-left: vw-medium(10px);
+          }
+          @include respond-from('small') {
+            background: #FFFFFF;
+            width: 100%;
+            padding-left: vw-small(10px);
+          }
+        }
+      }
+    }
+
+    ul {
+      opacity: 0;
+      transition: all .3s ease-in-out;
+      list-style: none;
+      position: absolute;
+      left: 0;
+      bottom: -130px;
+      z-index: 21;
+      background: #F3F3F3;
+      padding: 6px 0;
+      margin: 0;
+      @include respond-from('large') {
+        bottom: vw-large(-130px);
+        padding: vw-large(6px) 0;
+      }
+      @include respond-from('medium') {
+        position: relative;
+        bottom: auto;
+        padding: vw-medium(6px) 0;
+      }
+      @include respond-from('small') {
+        padding: vw-small(6px) 0;
+      }
+
+      li {
+        padding: 5px 16px;
+        @include respond-from('large') {
+          padding: vw-large(5px) vw-large(16px);
+        }
+        @include respond-from('medium') {
+
+        }
+        @include respond-from('small') {
+
+        }
+
+        a {
+          color: $black;
+          text-transform: capitalize;
+
+          &:hover {
+            color: $orange;
+          }
+        }
+      }
+    }
+
+    @include respond-from('small') {
+      //display: none;
+    }
+  }
+
   .hamburger-menu {
+    position: relative;
+    z-index: 100;
+    flex-flow: column wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
     display: none;
+    @include respond-from('medium') {
+      display: flex;
+      height: vw-medium(18px);
+      width: vw-medium(23px);
+    }
+    @include respond-from('small') {
+
+      height: vw-small(18px);
+      width: vw-small(23px);
+    }
+
+    .bar-top,
+    .bar-middle,
+    .bar-bottom {
+      height: 2px;
+      background: $black;
+      transform-origin: left;
+      transition: all .5s;
+      pointer-events: none;
+    }
+
+    &.active {
+      .bar-top {
+        transform: rotate(45deg);
+      }
+
+      .bar-middle {
+        transform: translateX(1rem);
+        opacity: 0;
+      }
+
+      .bar-bottom {
+        transform: rotate(-45deg);
+      }
+    }
   }
 }

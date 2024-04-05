@@ -20,7 +20,7 @@
       padding: vw-medium(80px) vw-medium(50px) vw-medium(80px) 0;
     }
     @include respond-from('small') {
-      padding: vw-small(56px) vw-small(16px) vw-small(40px) vw-small(16px);
+      padding: vw-small(56px) vw-small(16px) vw-small(40px) 0;
       width: 100%;
     }
 

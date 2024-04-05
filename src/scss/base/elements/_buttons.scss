@@ -8,4 +8,9 @@ button {
 	border: none;
 	height: 48px;
 	font-weight: 700;
+	transition: all .3s ease-in-out;
+	&:hover{
+		background: #303033!important;
+		color: $white!important;
+	}
 }
