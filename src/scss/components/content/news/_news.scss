@@ -12,6 +12,16 @@
             gap: vw-large(27px);
             margin-bottom: vw-large(56px);
         }
+        @include respond-from('medium') { 
+            flex-wrap: wrap;
+            gap: vw-medium(56px) vw-medium(27px);
+            margin-bottom: vw-medium(56px);
+        }
+        @include respond-from('small') { 
+            flex-wrap: wrap;
+            gap: vw-small(56px) vw-small(27px);
+            margin-bottom: vw-small(56px);
+        }
     }
 
     &__grid {

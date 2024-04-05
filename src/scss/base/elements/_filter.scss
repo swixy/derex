@@ -7,6 +7,8 @@
         @include respond-from('large') { 
             gap: vw-large(32px);
         }
+
+        overflow-x: auto;
     }
 
     &__item {

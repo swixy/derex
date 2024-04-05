@@ -2,13 +2,32 @@
     &__row {
         max-width: 946px;
         margin: 56px auto 72px auto;
+
+        @include respond-from('large') {
+          margin: vw-large(56px) auto vw-large(72px) auto;
+        }
+        @include respond-from('medium') {
+          margin: vw-large(40px) auto vw-large(60px) auto;
+        }
+        @include respond-from('small') {
+          margin: vw-small(24px) auto vw-small(60px) auto;
+        }
     }
     &__content {
       p {
           margin-bottom: 24px;
       }
       img {
-          margin: 8px 0 32px 0;
+        margin: 8px 0 32px 0;
+        @include respond-from('large') {
+          margin: vw-large(8px) 0 vw-large(32px) 0;
+        }
+        @include respond-from('medium') {
+          margin: vw-large(8px) 0 vw-large(16px) 0;
+        }
+        @include respond-from('small') {
+          margin: vw-small(8px) 0 vw-small(16px) 0;
+        }
       }
       h1,
       h2,
@@ -16,6 +35,15 @@
       h4 {
           &:not(:first-child) {
               margin: 64px 0 24px 0;
+              @include respond-from('large') {
+                margin: vw-large(64px) 0 vw-large(24px) 0;
+              }
+              @include respond-from('medium') {
+                margin: vw-large(40px) 0 vw-large(24px) 0;
+              }
+              @include respond-from('small') {
+                margin: vw-small(40px) 0 vw-small(24px) 0;
+              }
           }
       }
       h3 {
@@ -40,6 +68,16 @@
     &__related {
       padding: 100px 0 120px 0;
       border-top: 1px solid $grey-lighter;
+
+      @include respond-from('large') {
+        padding: vw-large(100px) 0 vw-large(120px) 0;
+      }
+      @include respond-from('medium') {
+        padding: vw-medium(60px) 0 vw-medium(60px) 0;
+      }
+      @include respond-from('small') {
+        padding: vw-small(60px) 0 vw-small(60px) 0;
+      }
     }
     &__head {
       display: flex;
