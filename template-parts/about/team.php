@@ -12,6 +12,7 @@ $teams_items = get_field('about_teams_items');
             </h2>
         <?php endif; ?>
         <?php if ($teams_items): ?>
+        <div class="team__container">
             <div class="team__items">
                 <?php
                 foreach ($teams_items as $item) {
@@ -40,6 +41,8 @@ $teams_items = get_field('about_teams_items');
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
+        </div>
+
         <?php endif; ?>
     </div>
 </section>

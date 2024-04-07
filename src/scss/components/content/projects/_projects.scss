@@ -1,54 +1,68 @@
 .projects {
+  &-archive {
     padding-top: 32px;
     @include respond-from('large') {
-        padding-top: vw-large(32px);
+      padding-top: vw-large(32px);
+    }
+    @include respond-from('medium') {
+      padding-top: vw-medium(32px);
+    }
+    @include respond-from('small') {
+      padding-top: vw-small(32px);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 56px 27px;
+    grid-template-columns: repeat(2, 1fr);
+    @include respond-from('large') {
+      gap: vw-large(56px) vw-large(27px);
+    }
+    @include respond-from('medium') {
+      gap: vw-medium(56px) vw-medium(27px);
+      grid-template-columns: 1fr;
+    }
+    @include respond-from('small') {
+      gap: vw-small(56px) vw-small(27px);
+      grid-template-columns: 1fr;
     }
 
-    &__grid {
-        display: grid;
-        gap: 56px 27px; 
-        grid-template-columns: repeat(2, 1fr);
-        @include respond-from('large') { 
-            gap: vw-large(56px) vw-large(27px);
-        }
-        @include respond-from('medium') { 
-            gap: vw-medium(56px) vw-medium(27px);
-            grid-template-columns: 1fr;
-        }
-        @include respond-from('small') { 
-            gap: vw-small(56px) vw-small(27px);
-            grid-template-columns: 1fr;
-        }
+    &--first {
+      column-count: 2;
+      column-gap: 27px;
 
-        &--first {
-            column-count: 2;
-            column-gap: 27px;
-            
-            @include respond-from('large') { 
-                gap: vw-large(27px);
-                margin-bottom: vw-large(56px);
-            }
-            @include respond-from('medium') { 
-                gap: vw-medium(56px);
-                column-count: 1;
-            }
-            @include respond-from('small') { 
-                gap: vw-small(56px);
-                column-count: 1;
-            }
+      @include respond-from('large') {
+        gap: vw-large(27px);
+        margin-bottom: vw-large(56px);
+      }
+      @include respond-from('medium') {
+        gap: vw-medium(56px);
+        column-count: 1;
+      }
+      @include respond-from('small') {
+        gap: vw-small(56px);
+        column-count: 1;
+      }
 
-            .card {
-                margin-bottom: 56px;
-                @include respond-from('large') {
-                    margin-bottom: vw-large(56px);
-                }
-                @include respond-from('medium') { 
-                    margin-bottom: vw-medium(56px);
-                }
-                @include respond-from('small') { 
-                    margin-bottom: vw-small(56px);
-                }
-            }
+      .card {
+        margin-bottom: 56px;
+        @include respond-from('large') {
+          margin-bottom: vw-large(56px);
         }
+        @include respond-from('medium') {
+          margin-bottom: vw-medium(56px);
+        }
+        @include respond-from('small') {
+          margin-bottom: vw-small(56px);
+        }
+        &__title{
+          transition: all .3s ease-in-out;
+          &:hover{
+            color: $orange;
+          }
+        }
+      }
     }
+  }
 }

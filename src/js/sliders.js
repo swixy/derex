@@ -39,31 +39,64 @@ document.addEventListener('DOMContentLoaded', function () {
         checkAndDisableSwiper();
     });
     const partnersSwiper = new Swiper('.partners__items', {
-        slidesPerView: "auto",
+        slidesPerView: 1,
+        spaceBetween: 0,
         createElements: true,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
         },
+        breakpoints: {
+            641: {
+                spaceBetween: 50,
+                slidesPerView: 3
+            },
+            1024: {
+                spaceBetween: 70,
+                slidesPerView: 4
+            }
+        }
 
     });
+
+
     const certificatesSwiper = new Swiper('.certificates__items', {
-        slidesPerView: 4,
+        slidesPerView: 1,
+        spaceBetween: 20,
         createElements: true,
-        spaceBetween: 70,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".certificates .swiper-button-next",
+            prevEl: ".certificates .swiper-button-prev",
         },
+        breakpoints: {
+            641: {
+                 spaceBetween: 25,
+                slidesPerView: 3
+            },
+            1024: {
+                spaceBetween: 50,
+                slidesPerView: 4
+            }
+        }
     });
     const teamSwiper = new Swiper('.team__items', {
-        slidesPerView: "auto",
+        slidesPerView: 2,
         createElements: true,
-        spaceBetween: 50,
+        spaceBetween: 20,
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".team .swiper-button-next",
+            prevEl: ".team .swiper-button-prev",
         },
+        breakpoints: {
+            641: {
+                spaceBetween: 25,
+                slidesPerView: 3
+            },
+            1024: {
+                spaceBetween: 50,
+                slidesPerView: 5
+            }
+        }
 
     });
 

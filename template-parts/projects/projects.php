@@ -11,7 +11,7 @@
  */
 ?>
 
-<section class="projects">
+<section class="projects projects-archive">
     <div class="container">
         <div class="projects__grid--first">
             <?php

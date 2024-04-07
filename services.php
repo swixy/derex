@@ -26,12 +26,6 @@ get_header();
         else :
         endif;
         ?>
-
-
-        <!--        --><?php //get_template_part('template-parts/services/tabs') ?>
-<!--        --><?php //get_template_part('template-parts/services/advantages') ?>
-<!--        --><?php //get_template_part('template-parts/services/imageHalf') ?>
-<!--        --><?php //get_template_part('template-parts/home/projects') ?>
     </div>
 <?php
 get_footer();

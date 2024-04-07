@@ -16,18 +16,21 @@ $partners_logo = get_field('home_parners_logo');
             </p>
         <?php endif; ?>
         <?php if ($partners_logo): ?>
-            <div class="partners__items">
-                <?php
-                foreach ($partners_logo as $item) {
-                    $logo = $item['logo'];
-                    ?>
-                    <img class="partners__items__img swiper-slide"
-                         alt="<?php echo esc_attr($logo['alt']) ?>"
-                         src="<?php echo esc_url($logo['url']) ?>">
-                <?php } ?>
+            <div class="partners__container">
+                <div class="partners__items">
+                    <?php
+                    foreach ($partners_logo as $item) {
+                        $logo = $item['logo'];
+                        ?>
+                        <img class="partners__items__img swiper-slide"
+                             alt="<?php echo esc_attr($logo['alt']) ?>"
+                             src="<?php echo esc_url($logo['url']) ?>">
+                    <?php } ?>
+                </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
             </div>
+
         <?php endif; ?>
     </div>
 </section>

@@ -315,6 +315,7 @@
 
         ul {
           opacity: 1;
+          z-index: 21;
           @include respond-from('medium') {
             background: #FFFFFF;
             width: 100%;
@@ -331,12 +332,12 @@
 
     ul {
       opacity: 0;
-      transition: all .3s ease-in-out;
+      transition: opacity .3s ease-in-out;
       list-style: none;
       position: absolute;
       left: 0;
       bottom: -130px;
-      z-index: 21;
+      z-index: -1;
       background: #F3F3F3;
       padding: 6px 0;
       margin: 0;

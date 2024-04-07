@@ -1,6 +1,7 @@
-.contact{
+.contact {
   background: $light-grey;
-  &__container{
+
+  &__container {
     display: flex;
     gap: 40px;
     @include respond-from('large') {
@@ -12,15 +13,17 @@
       flex-wrap: wrap;
     }
     @include respond-from('small') {
-      gap: vw-small(32px );
+      gap: vw-small(32px);
     }
   }
-  &__info{
+
+  &__info {
     width: 30%;
     @include respond-from('medium') {
       width: 100%;
     }
-    &__title{
+
+    &__title {
       color: $black;
       font-size: 40px;
       line-height: 32px;
@@ -42,7 +45,8 @@
         margin-bottom: vw-small(8px);
       }
     }
-    &__text{
+
+    &__text {
       font-size: 18px;
       font-weight: 400;
       line-height: 26px;
@@ -61,12 +65,14 @@
       }
     }
   }
-  &__form{
+
+  &__form {
     width: 70%;
     @include respond-from('medium') {
       width: 100%;
     }
-    &__wrapper{
+
+    &__wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
@@ -86,34 +92,128 @@
         flex-direction: column;
       }
     }
-    form{
+
+    form {
       width: 100%;
-      input{
+
+      input {
+        width: 100%;
         height: 50px;
         background: transparent;
         border: 1px solid $grey;
+        outline: none;
+        padding-left: 16px;
+        font-size: 18px;
         @include respond-from('large') {
-          border: 1px solid $grey;
+          padding-left: vw-large(16px);
+          font-size: vw-large(18px);
           height: vw-large(50px);
         }
         @include respond-from('medium') {
+          padding-left: vw-medium(16px);
+          font-size: vw-medium(16px);
           height: vw-medium(46px);
         }
         @include respond-from('small') {
+          padding-left: vw-small(16px);
+          font-size: vw-small(16px);
           height: vw-small(46px);
         }
+
+        &::placeholder {
+          font-size: 18px;
+          @include respond-from('large') {
+            font-size: vw-large(18px);
+          }
+          @include respond-from('medium') {
+            font-size: vw-medium(16px);
+          }
+          @include respond-from('small') {
+            font-size: vw-small(16px);
+          }
+        }
       }
-      textarea{
+
+      textarea {
         background: transparent;
         border: 1px solid $grey;
         width: 100%;
+        outline: none;
+        padding: 16px 16px;
+        font-size: 18px;
+        @include respond-from('large') {
+          padding: vw-large(16px) vw-large(16px);
+          font-size: vw-large(18px);
+        }
+        @include respond-from('medium') {
+          padding: vw-medium(16px) vw-medium(16px);
+          font-size: vw-medium(16px);
+        }
+        @include respond-from('small') {
+          padding: vw-small(16px) vw-small(16px);
+          font-size: vw-small(16px);
+        }
+
+        &::placeholder {
+          font-size: 18px;
+          @include respond-from('large') {
+            font-size: vw-large(18px);
+          }
+          @include respond-from('medium') {
+            font-size: vw-medium(16px);
+          }
+          @include respond-from('small') {
+            font-size: vw-small(16px);
+          }
+        }
+      }
+
+      .wpcf7-not-valid-tip {
+        color: $orange !important;
+      }
+
+      &.sent {
+        .wpcf7-response-output {
+          border: none !important;
+          margin: 0 !important;
+          background: $orange !important;
+          color: $white !important;
+          font-weight: 500 !important;
+        }
+      }
+
+      &.invalid {
+        .wpcf7-response-output {
+          border: none !important;
+          margin: 0 !important;
+          color: $orange !important;
+          font-weight: 500 !important;
+        }
       }
     }
-    &__button{
-      margin-left: auto;
-      margin-top: 32px;
-      background: $orange;
-      color: $white;
+
+    &__button {
+      margin-left: auto !important;
+      margin-top: 32px !important;
+      background: $orange !important;
+      color: $white !important;
+      border: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer;
+      font-family: $font__text;
+      padding: 0 !important;
+      height: 48px;
+      font-weight: 700;
+      transition: all .3s ease-in-out;
+      width: 120px !important;
+
+      &:hover {
+        background: #303033 !important;
+        color: $white !important;
+      }
+
       @include respond-from('large') {
         margin-top: vw-large(32px);
       }

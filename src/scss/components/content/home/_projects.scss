@@ -38,6 +38,7 @@
     font-weight: 600;
     text-decoration: underline;
     position: relative;
+    transition: all .3s ease-in-out;
     @include respond-from('large') {
       font-size: vw-large(20px);
       line-height: vw-large(38px);
@@ -51,16 +52,41 @@
       //font-size: vw-small(20px);
       //line-height: vw-small(32px);
     }
+    &-mob{
+      display: none;
+      @include respond-from('small') {
+        display: block;
+        width: max-content;
+        margin: 0 auto;
+        font-size: vw-small(20px);
+        line-height: vw-small(32px);
+        &:after{
+          display: none;
+        }
+      }
+    }
     &:hover {
+      color: $orange;
+
       &:after {
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9H14.5" stroke="%23F45F1C" stroke-width="1.5" stroke-linecap="square"/><path d="M10 3.75L15.25 9L10 14.25" stroke="%23F45F1C" stroke-width="1.5" stroke-linecap="square"/></svg>');
+        background-size: cover;
         right: -35px;
+        width: 18px;
+        height: 20px;
         @include respond-from('large') {
+          width: vw-large(18px);
+          height: vw-large(20px);
           right: vw-large(-35px);
         }
         @include respond-from('medium') {
+          width: vw-medium(18px);
+          height: vw-medium(20px);
           right: vw-medium(-35px);
         }
         @include respond-from('small') {
+          width: vw-small(18px);
+          height: vw-small(20px);
           right: vw-small(-35px);
         }
       }
@@ -71,7 +97,7 @@
       content: '';
       width: 18px;
       height: 20px;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1 11H13.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M9 5.75L14.25 11L9 16.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9H14.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M10 3.75L15.25 9L10 14.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
       background-size: cover;
       right: -25px;
       top: 50%;
@@ -110,10 +136,15 @@
     @include respond-from('small') {
       width: 100% !important;
       margin-bottom: vw-small(40px);
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
+      &:nth-child(n+4) {
+        display: none;
+      }
     }
+
+
     &__img {
       width: 100%;
       height: 340px !important;
@@ -128,9 +159,10 @@
         margin-bottom: vw-medium(16px);
       }
       @include respond-from('small') {
-        height: auto !important;
+        height: 240px !important;
         margin-bottom: vw-small(16px);
       }
+
     }
 
     &__title {
@@ -139,6 +171,7 @@
       line-height: 32px;
       font-weight: 700;
       margin-bottom: 8px;
+      transition: all .3s ease-in-out;
       @include respond-from('large') {
         font-size: vw-large(28px);
         line-height: vw-large(32px);
@@ -155,6 +188,9 @@
         margin-bottom: vw-small(4px);
       }
 
+      &:hover {
+        color: $orange;
+      }
     }
 
     &__text {

@@ -80,13 +80,13 @@ function sort_posts_by_years()
         'offset' => 4,
         'order' => 'DESC',
         'post_status' => array('publish'),
-//        'tax_query' => array(
-//            array(
-//                'taxonomy' => 'year_cat',
-//                'field' => 'slug',
-//                'terms' => $term,
-//            ),
-//        ),
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'year_cat',
+                'field' => 'slug',
+                'terms' => $term,
+            ),
+        ),
     );
 
     $query = new WP_Query($args);

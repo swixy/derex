@@ -3,7 +3,12 @@
     @include respond-from('large') {
         padding-top: vw-large(32px);
     }
-
+    @include respond-from('medium') {
+        padding-top: vw-medium(32px);
+    }
+    @include respond-from('small') {
+        padding-top: vw-small(32px);
+    }
     &__row {
         display: flex;
         gap: 27px; 
@@ -41,6 +46,14 @@
         }
         .card__thumb{
             height: auto;
+        }
+    }
+    .card{
+        &__title{
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: $orange;
+            }
         }
     }
 }

@@ -190,6 +190,7 @@
       font-weight: 600;
       text-decoration: underline;
       position: relative;
+      transition: all .3s ease-in-out;
       @include respond-from('large') {
         font-size: vw-large(20px);
         line-height: vw-large(38px);
@@ -205,8 +206,10 @@
         line-height: vw-small(38px);
       }
       &:hover{
+        color: $orange;
         &:after{
           right: -35px;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9H14.5" stroke="%23F45F1C" stroke-width="1.5" stroke-linecap="square"/><path d="M10 3.75L15.25 9L10 14.25" stroke="%23F45F1C" stroke-width="1.5" stroke-linecap="square"/></svg>');
           @include respond-from('large') {
             right: vw-large(-35px);
           }
@@ -223,7 +226,7 @@
         content: '';
         width: 18px;
         height: 20px;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" viewBox="0 0 18 20" fill="none"><path d="M1 11H13.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M9 5.75L14.25 11L9 16.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9H14.5" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/><path d="M10 3.75L15.25 9L10 14.25" stroke="%23303033" stroke-width="1.5" stroke-linecap="square"/></svg>');
         background-size: cover;
         right: -25px;
         top: 50%;

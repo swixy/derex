@@ -19,8 +19,9 @@
         font-weight: 400;
         transition: all .3s ease-in-out;
         &:hover, &.active {
-            color: $orange;
-            font-weight: 700;
+            color: $orange!important;
+            font-weight: 700!important;
+            background: transparent!important;
             text-decoration: none;
         }
     }

@@ -79,6 +79,7 @@
       position: relative;
       display: inline-block;
       margin-top: 40px;
+      transition: all .2s ease-in-out;
       @include respond-from('large') {
         font-size: vw-large(20px);
         line-height: vw-large(38px);
@@ -96,16 +97,31 @@
 
       }
       &:hover {
-        &:after {
-          right: -35px;
-          @include respond-from('large') {
-            right: vw-large(-35px);
-          }
-          @include respond-from('medium') {
-            right: vw-medium(-35px);
-          }
-          @include respond-from('small') {
-            right: vw-small(-35px);
+        color: $orange;
+        &:hover {
+          color: $orange;
+
+          &:after {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 9H14.5" stroke="%23F45F1C" stroke-width="1.5" stroke-linecap="square"/><path d="M10 3.75L15.25 9L10 14.25" stroke="%23F45F1C" stroke-width="1.5" stroke-linecap="square"/></svg>');
+            background-size: cover;
+            right: -35px;
+            width: 18px;
+            height: 20px;
+            @include respond-from('large') {
+              width: vw-large(18px);
+              height: vw-large(20px);
+              right: vw-large(-35px);
+            }
+            @include respond-from('medium') {
+              width: vw-medium(18px);
+              height: vw-medium(20px);
+              right: vw-medium(-35px);
+            }
+            @include respond-from('small') {
+              width: vw-small(18px);
+              height: vw-small(20px);
+              right: vw-small(-35px);
+            }
           }
         }
       }

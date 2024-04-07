@@ -1,7 +1,94 @@
 .certificates{
   background: $light-grey;
-  .container{
+  &__container{
+    padding: 0 96px;
+    overflow: hidden;
+    position: relative;
+    @include respond-from('large') {
+      padding: 0 vw-large(96px);
+    }
+    @include respond-from('medium') {
+      padding: 0 vw-medium(72px);
+    }
+    @include respond-from('small') {
+      padding: 0 vw-small(72px);
+    }
+    .swiper-button-next, .swiper-button-prev{
+      top: auto;
+      width: 40px;
+      height: 40px;
+      margin-top: 0;
+      @include respond-from('large') {
+        width: vw-large(40px);
+        height: vw-large(40px);
+      }
+      @include respond-from('medium') {
+        width: vw-medium(40px);
+        height: vw-medium(40px);
+      }
+      @include respond-from('small') {
+        width: vw-small(40px);
+        height: vw-small(40px);
+      }
+      &:after{
+        display: none;
+      }
 
+      &:before {
+        transition: all .2s ease-in-out;
+      }
+
+      &:hover {
+        width: 40px;
+        height: 40px;
+        @include respond-from('large') {
+          width: vw-large(40px);
+          height: vw-large(40px);
+        }
+        @include respond-from('medium') {
+          width: vw-medium(40px);
+          height: vw-medium(40px);
+        }
+        @include respond-from('small') {
+          width: vw-small(40px);
+          height: vw-small(40px);
+        }
+
+        &:before {
+          width: 100%;
+          height: 100%;
+          background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M31.666 20H9.99935" stroke="%23F45F1C" stroke-width="2" stroke-linecap="square"/><path d="M20 8.33203L8.33333 19.9987L20 31.6654" stroke="%23F45F1C" stroke-width="2" stroke-linecap="square"/></svg>');
+          background-size: cover;
+        }
+      }
+    }
+    .swiper-button-prev{
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      &:before{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M31.666 20H9.99935" stroke="%23585858" stroke-width="2" stroke-linecap="square"/><path d="M20 8.33203L8.33333 19.9987L20 31.6654" stroke="%23585858" stroke-width="2" stroke-linecap="square"/></svg>');
+        background-size: cover;
+      }
+    }
+    .swiper-button-next{
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      &:before{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M31.666 20H9.99935" stroke="%23585858" stroke-width="2" stroke-linecap="square"/><path d="M20 8.33203L8.33333 19.9987L20 31.6654" stroke="%23585858" stroke-width="2" stroke-linecap="square"/></svg>');
+        background-size: cover;
+        transform: rotate(180deg);
+      }
+    }
   }
   &__title{
     color: $black;
@@ -27,76 +114,18 @@
   }
   &__items{
     overflow: hidden;
-    padding: 0 70px;
-    position: relative;
-    @include respond-from('large') {
-      padding: 0 vw-large(96px);
-    }
-    @include respond-from('medium') {
-      padding: 0 vw-medium(50px);
-    }
-    @include respond-from('small') {
-      padding: 0 vw-small(80px);
-    }
     &__img{
-      width: 170px!important;
-      margin-right: 100px!important;
-      @include respond-from('large') {
-        margin-right: vw-large(100px)!important;
-        width: vw-large(170px)!important;
-      }
-      @include respond-from('medium') {
-        margin-right: vw-medium(50px)!important;
-        width: vw-medium(175px)!important;
-      }
-      @include respond-from('small') {
-        margin-right: vw-small(90px)!important;
-        width: vw-small(195px)!important;
-      }
-    }
-    .swiper-button-next, .swiper-button-prev{
-      top: auto;
-      width: 40px;
-      height: 40px;
-      margin-top: 0;
-      @include respond-from('large') {
-        width: vw-large(40px);
-        height: vw-large(40px);
-      }
-      @include respond-from('medium') {
-        width: vw-medium(40px);
-        height: vw-medium(40px);
-      }
-      @include respond-from('small') {
-        width: vw-small(40px);
-        height: vw-small(40px);
-      }
-      &:after{
-        display: none;
-      }
-    }
-    .swiper-button-prev{
-      left: 0;
-      &:before{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M31.666 20H9.99935" stroke="%23585858" stroke-width="2" stroke-linecap="square"/><path d="M20 8.33203L8.33333 19.9987L20 31.6654" stroke="%23585858" stroke-width="2" stroke-linecap="square"/></svg>');
-        background-size: cover;
-      }
-    }
-    .swiper-button-next{
-      right: 0;
-      &:before{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        content: '';
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M31.666 20H9.99935" stroke="%23585858" stroke-width="2" stroke-linecap="square"/><path d="M20 8.33203L8.33333 19.9987L20 31.6654" stroke="%23585858" stroke-width="2" stroke-linecap="square"/></svg>');
-        background-size: cover;
-        transform: rotate(180deg);
-      }
+      object-fit: cover;
+      //@include respond-from('large') {
+      //  //margin-right: vw-large(70px)!important;
+      //  //width: vw-large(185px) !important;
+      //}
+      //@include respond-from('medium') {
+      //  margin-right: vw-medium(35px)!important;
+      //}
+      //@include respond-from('small') {
+      //  margin-right: 0!important;
+      //}
     }
   }
 }
